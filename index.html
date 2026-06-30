@@ -1,93 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maxwell Cheng Research</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="description" content="Maxwell Cheng Research focuses on infrastructure risk, engineering governance, strategic defense, and democratic resilience." />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #222;
-      background: #ffffff;
-    }
+:root {
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --ink: #152238;
+  --muted: #5b677a;
+  --line: #dbe3ef;
+  --accent: #193b6a;
+  --accent-2: #e8eef7;
+  --shadow: 0 18px 45px rgba(19, 41, 75, 0.10);
+}
 
-    h1 {
-      font-size: 38px;
-      margin-bottom: 5px;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    .subtitle {
-      font-size: 20px;
-      color: #555;
-      margin-bottom: 35px;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    h2 {
-      margin-top: 35px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 6px;
-    }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+}
 
-    p {
-      font-size: 16px;
-    }
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
 
-    .footer {
-      margin-top: 50px;
-      font-size: 14px;
-      color: #777;
-    }
-  </style>
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-wrap {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  font-weight: 800;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+.hero {
+  padding: 92px 0 70px;
+  background:
+    linear-gradient(135deg, rgba(25, 59, 106, 0.94), rgba(17, 38, 68, 0.95)),
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.2), transparent 30%);
+  color: #fff;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.eyebrow,
+.section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 12px;
+  font-weight: 800;
+  color: #8eaad0;
+  margin: 0 0 14px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 70px);
+  line-height: 1.02;
+  letter-spacing: -0.06em;
+  margin: 0 0 24px;
+}
+
+.hero-text {
+  font-size: 19px;
+  max-width: 760px;
+  color: #d9e4f4;
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.btn.primary {
+  background: #fff;
+  color: var(--accent);
+}
+
+.btn.secondary {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.hero-card h2 {
+  margin-top: 0;
+}
+
+.hero-card ul {
+  padding-left: 20px;
+  color: #e6edf8;
+}
+
+.section {
+  padding: 82px 0;
+}
+
+.alt {
+  background: var(--surface);
+}
+
+.intro-strip {
+  padding: 36px 0;
+}
+
+.three-cols,
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.feature-card,
+.card,
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+
+.feature-card h3,
+.card h3,
+.timeline-item h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 58px;
+}
+
+h2 {
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  margin: 0 0 26px;
+}
+
+.text-block p,
+.card p,
+.feature-card p,
+.timeline-item p,
+.contact-card p {
+  color: var(--muted);
+}
+
+.cards-grid {
+  margin-top: 28px;
+}
+
+.card {
+  box-shadow: none;
+}
+
+.timeline {
+  display: grid;
+  gap: 18px;
+}
+
+.timeline-item {
+  padding: 22px 24px;
+  background: var(--surface);
+  border-left: 5px solid var(--accent);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.article-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.article-list a {
+  display: block;
+  padding: 18px 20px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.article-list a:hover {
+  background: var(--accent-2);
+}
+
+.note {
+  color: var(--muted);
+  margin-top: 20px;
+}
+
+.contact-section {
+  background: linear-gradient(135deg, #eef3fa, #ffffff);
+}
+
+.contact-card {
+  max-width: 760px;
+}
+
+.email {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 22px;
+  font-weight: 800;
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+.site-footer {
+  padding: 30px 0;
+  background: #0f1d31;
+  color: #c7d4e6;
+}
+
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+@media (max-width: 860px) {
+  .nav-wrap {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 16px 0;
+  }
+
+  .nav {
+    justify-content: flex-start;
+  }
+
+  .hero-grid,
+  .content-grid,
+  .three-cols,
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 62px 0 46px;
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+}
+
+</style>
 </head>
-
 <body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home">Maxwell Cheng Research</a>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#articles">Articles</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <h1>Maxwell Cheng Research</h1>
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Infrastructure Risk · Engineering Governance · Strategic Defense</p>
+          <h1>Building analytical frameworks for infrastructure security and democratic resilience.</h1>
+          <p class="hero-text">
+            I study how infrastructure, technology, capital, and authoritarian influence intersect in global development projects.
+            My work connects engineering practice with governance, risk assessment, and responsible international development.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#research">View Research</a>
+            <a class="btn secondary" href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>Core Focus</h2>
+          <ul>
+            <li>Overseas infrastructure risk</li>
+            <li>Engineering governance and compliance</li>
+            <li>Technology, data centers, and strategic security</li>
+            <li>Democratic resilience against authoritarian influence</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <p class="subtitle">
-    Infrastructure Risk & Strategic Defense Research
-  </p>
+    <section class="section intro-strip">
+      <div class="container three-cols">
+        <div class="feature-card">
+          <h3>Infrastructure Risk</h3>
+          <p>Ports, roads, energy systems, telecom networks, data centers, industrial parks, and public infrastructure.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Authoritarian Influence</h3>
+          <p>How capital, technology, construction, and long-term operation models can become tools of strategic control.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Democratic Resilience</h3>
+          <p>Helping open societies identify infrastructure-related risks and strengthen governance mechanisms.</p>
+        </div>
+      </div>
+    </section>
 
-  <h2>About</h2>
-  <p>
-    Maxwell Cheng is an engineering and infrastructure professional focused on
-    infrastructure risk, project governance, and strategic resilience in complex
-    infrastructure systems.
-  </p>
+    <section id="about" class="section">
+      <div class="container content-grid">
+        <div>
+          <p class="section-label">About</p>
+          <h2>Engineering experience applied to global risk analysis.</h2>
+        </div>
+        <div class="text-block">
+          <p>
+            Maxwell Cheng is an engineering and project management professional with long-term experience in construction supervision,
+            EPC management, overseas infrastructure, telecom-related engineering environments, and public project governance.
+          </p>
+          <p>
+            His current research focuses on the intersection of infrastructure, geopolitical risk, engineering governance, and democratic security.
+            The goal is to develop practical frameworks that help identify risks in overseas development projects and support responsible decision-making.
+          </p>
+          <p>
+            This website presents research notes, case-study frameworks, policy-oriented thinking, and professional observations based on engineering practice.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <h2>Research Focus</h2>
-  <p>
-    This site focuses on infrastructure risk assessment, foreign authoritarian
-    influence in strategic infrastructure, Belt and Road project risk, data centers,
-    ports, energy systems, industrial parks, and democratic infrastructure resilience.
-  </p>
+    <section id="research" class="section alt">
+      <div class="container">
+        <p class="section-label">Research</p>
+        <h2>Main Research Directions</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Infrastructure Risk Assessment</h3>
+            <p>Assessment models for ports, highways, railways, telecom systems, energy projects, data centers, and industrial parks.</p>
+          </article>
+          <article class="card">
+            <h3>Authoritarian Influence in Development Projects</h3>
+            <p>Analysis of how infrastructure finance, construction, standards, data, and operations can create long-term political influence.</p>
+          </article>
+          <article class="card">
+            <h3>Engineering Governance and Compliance</h3>
+            <p>Project governance, procurement, EPC control, contract risk, quality management, safety responsibilities, and accountability systems.</p>
+          </article>
+          <article class="card">
+            <h3>Strategic Defense for Democratic Countries</h3>
+            <p>Frameworks for democratic governments, institutions, and civil society to identify and reduce infrastructure-related strategic risks.</p>
+          </article>
+          <article class="card">
+            <h3>Data Centers and Digital Infrastructure</h3>
+            <p>Risk analysis of cloud infrastructure, data centers, digital sovereignty, supply chains, and cross-border data governance.</p>
+          </article>
+          <article class="card">
+            <h3>Case Studies</h3>
+            <p>Comparative observations from regions such as Africa, Central Asia, Eastern Europe, Latin America, and Southeast Asia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <h2>Professional Background</h2>
-  <p>
-    Experience includes overseas infrastructure projects, engineering management,
-    EPC governance, project supervision, consulting, and strategic infrastructure planning.
-  </p>
+    <section id="projects" class="section">
+      <div class="container content-grid">
+        <div>
+          <p class="section-label">Projects</p>
+          <h2>Professional and research-based project areas.</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>International Engineering Experience</h3>
+            <p>Overseas infrastructure, telecom-related project environments, energy and industrial project coordination, and cross-cultural project management.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Public Infrastructure and Governance</h3>
+            <p>Construction supervision, project management, procurement compliance, engineering quality, safety management, and public project accountability.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Infrastructure Risk Model</h3>
+            <p>A research framework for identifying risk factors in financing, design, construction, operation, digital systems, and political influence.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Strategic Defense Framework</h3>
+            <p>A policy-oriented framework for strengthening democratic resilience through engineering governance, transparency, and risk-based project review.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <h2>Selected Topics</h2>
-  <p>
-    Strategic infrastructure governance, project risk, overseas engineering systems,
-    industrial parks, energy infrastructure, data centers, ports, and infrastructure
-    resilience for democratic societies.
-  </p>
+    <section id="articles" class="section alt">
+      <div class="container">
+        <p class="section-label">Articles</p>
+        <h2>Planned Articles</h2>
+        <div class="article-list">
+          <a href="#contact">Why Infrastructure Is No Longer Just Engineering</a>
+          <a href="#contact">How Authoritarian States Use Infrastructure as Strategic Influence</a>
+          <a href="#contact">The Risk of Data Centers in Geopolitical Competition</a>
+          <a href="#contact">Engineering Governance as a Democratic Defense Tool</a>
+          <a href="#contact">A Framework for Assessing Overseas Infrastructure Risk</a>
+          <a href="#contact">Faith, Freedom, and Responsibility in a Time of Crisis</a>
+        </div>
+        <p class="note">Article pages can be added gradually as research notes are completed.</p>
+      </div>
+    </section>
 
-  <h2>Contact</h2>
-  <p>
-    Email: chengmianz@gmail.com
-  </p>
+    <section id="contact" class="section contact-section">
+      <div class="container contact-card">
+        <p class="section-label">Contact</p>
+        <h2>Research discussion and collaboration</h2>
+        <p>
+          For research discussion, policy-oriented analysis, engineering governance, or infrastructure risk collaboration, please contact:
+        </p>
+        <a class="email" href="mailto:chengmianz@gmail.com">chengmianz@gmail.com</a>
+      </div>
+    </section>
+  </main>
 
-  <div class="footer">
-    © 2026 Maxwell Cheng Research. All rights reserved.
-  </div>
-
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© 2026 Maxwell Cheng Research. All rights reserved.</p>
+      <p>Infrastructure Risk · Engineering Governance · Democratic Resilience</p>
+    </div>
+  </footer>
 </body>
 </html>

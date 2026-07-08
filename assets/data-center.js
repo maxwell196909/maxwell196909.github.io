@@ -1,14 +1,13 @@
-
-const DATA_URL = "../data/featured-data-center-master.json";
+const DATA_URL = "../data/featured-data-center-master.json?v=english-public-v4";
 const fields = {
-  id:"编号", group:"系统组", subsystem:"子系统", level:"对象层级",
-  item:"设备/配件/资料项", requirement:"主要功能需求", route:"推荐技术路线/规格",
-  params:"关键技术参数/控制指标", why:"为什么选此路线/规格（数据逻辑）",
-  whyNot:"为什么不选替代方案", calc:"是否需要计算", inputs:"计算输入参数",
-  formula:"计算/校核公式", demand:"示例需求值", capacity:"示例选型能力值",
-  margin:"裕度%", risk:"主要风险", measure:"控制措施", evidence:"验收/证据资料",
-  delivery:"运维/交付资料", access:"访问等级", package:"受限资料包", webid:"网站接口ID",
-  summary:"网页公开摘要", topic:"四级分类"
+  id:"ID", group:"System Group", subsystem:"Subsystem", level:"Object Level",
+  item:"Item / Equipment / Accessory / Document", requirement:"Functional Requirement", route:"Recommended Technical Route / Specification",
+  params:"Key Technical Parameters / Control Indicators", why:"Why This Route / Specification Is Selected",
+  whyNot:"Why Alternatives Are Not Selected", calc:"Calculation Required", inputs:"Calculation Inputs",
+  formula:"Calculation / Verification Formula", demand:"Example Demand Value", capacity:"Example Selected Capacity",
+  margin:"Margin %", risk:"Main Risk", measure:"Control Measures", evidence:"Acceptance / Evidence Documents",
+  delivery:"Operation / Handover Documents", access:"Access Level", package:"Restricted Package", webid:"Website Interface ID",
+  summary:"Public Web Summary", topic:"Fourth-Level Category"
 };
 let allRecords = [];
 let filtered = [];
@@ -19,7 +18,7 @@ function tagClass(access){
   return "tag";
 }
 function byId(id){return document.getElementById(id)}
-function uniq(arr){return [...new Set(arr.filter(Boolean))].sort((a,b)=>a.localeCompare(b,"zh-Hans-CN"))}
+function uniq(arr){return [...new Set(arr.filter(Boolean))].sort((a,b)=>a.localeCompare(b,"en-US"))}
 function fillSelect(id, values, allText){
   const el = byId(id);
   el.innerHTML = `<option value="">${allText}</option>` + values.map(v=>`<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join("");
@@ -38,10 +37,10 @@ function init(){
     byId("countRecords").textContent = allRecords.length;
     byId("countSystems").textContent = uniq(allRecords.map(r=>r[fields.group])).length;
     byId("countPackages").textContent = uniq(allRecords.map(r=>r[fields.package])).length;
-    byId("countCalc").textContent = allRecords.filter(r=>String(r[fields.calc]).includes("是")).length;
-    fillSelect("filterGroup", uniq(allRecords.map(r=>r[fields.group])), "全部系统组");
-    fillSelect("filterAccess", uniq(allRecords.map(r=>r[fields.access])), "全部访问等级");
-    fillSelect("filterTopic", uniq(allRecords.map(r=>r[fields.topic])), "全部四级分类");
+    byId("countCalc").textContent = allRecords.filter(r=>String(r[fields.calc]).includes("Yes")).length;
+    fillSelect("filterGroup", uniq(allRecords.map(r=>r[fields.group])), "All system groups");
+    fillSelect("filterAccess", uniq(allRecords.map(r=>r[fields.access])), "All access levels");
+    fillSelect("filterTopic", uniq(allRecords.map(r=>r[fields.topic])), "All fourth-level categories");
     renderCards();
     applyFilters();
     ["search","filterGroup","filterAccess","filterTopic"].forEach(id=>{
@@ -49,7 +48,7 @@ function init(){
       byId(id).addEventListener("change", applyFilters);
     });
   }).catch(err=>{
-    byId("tableBody").innerHTML = `<tr><td colspan="8">数据加载失败：${escapeHtml(err.message)}</td></tr>`;
+    byId("tableBody").innerHTML = `<tr><td colspan="8">Database loading failed: ${escapeHtml(err.message)}</td></tr>`;
   });
 }
 function renderCards(){
@@ -59,7 +58,7 @@ function renderCards(){
     const pkgs = uniq(rows.map(r=>r[fields.package])).slice(0,3).join(" / ");
     return `<article class="card">
       <h3>${escapeHtml(g)}</h3>
-      <p>${rows.length} 条记录；资料包：${escapeHtml(pkgs || "未设置")}</p>
+      <p>${rows.length} records; package: ${escapeHtml(pkgs || "Not set")}</p>
     </article>`;
   }).join("");
 }
@@ -88,18 +87,18 @@ function renderTable(rows){
       <td>${escapeHtml(truncate(r[fields.evidence],95))}</td>
       <td>${escapeHtml(r[fields.webid])}</td>
     </tr>
-  `).join("") || `<tr><td colspan="8">没有匹配记录。</td></tr>`;
+  `).join("") || `<tr><td colspan="8">No matching records.</td></tr>`;
 }
 function showDetail(id){
   const r = allRecords.find(x=>x[fields.id]===id);
   if(!r) return;
   const detailFields = [
-    ["设备/资料项",fields.item],["主要功能需求",fields.requirement],["推荐技术路线/规格",fields.route],
-    ["关键技术参数/控制指标",fields.params],["为什么选",fields.why],["为什么不选替代方案",fields.whyNot],
-    ["是否需要计算",fields.calc],["计算输入参数",fields.inputs],["计算/校核公式",fields.formula],
-    ["示例需求值",fields.demand],["示例选型能力值",fields.capacity],["裕度%",fields.margin],
-    ["主要风险",fields.risk],["控制措施",fields.measure],["验收/证据资料",fields.evidence],
-    ["运维/交付资料",fields.delivery],["受限资料包",fields.package],["网页公开摘要",fields.summary]
+    ["Item / Equipment / Document",fields.item],["Functional Requirement",fields.requirement],["Recommended Technical Route / Specification",fields.route],
+    ["Key Technical Parameters / Control Indicators",fields.params],["Why selected",fields.why],["Why alternatives are not selected",fields.whyNot],
+    ["Calculation required",fields.calc],["Calculation inputs",fields.inputs],["Calculation / verification formula",fields.formula],
+    ["Example demand value",fields.demand],["Example selected capacity",fields.capacity],["Margin %",fields.margin],
+    ["Main risk",fields.risk],["Control measures",fields.measure],["Acceptance / evidence documents",fields.evidence],
+    ["Operation / handover documents",fields.delivery],["Restricted package",fields.package],["Public web summary",fields.summary]
   ];
   byId("detailTitle").textContent = `${r[fields.id]} · ${r[fields.item]}`;
   byId("detailMeta").innerHTML = `<span class="${tagClass(r[fields.access])}">${escapeHtml(r[fields.access])}</span> <span class="tag">${escapeHtml(r[fields.group])}</span> <span class="tag">${escapeHtml(r[fields.topic])}</span>`;

@@ -1,0 +1,2396 @@
+{
+  "metadata": {
+    "recordCount": 125,
+    "note": "Directory only. No real file URLs are included."
+  },
+  "packages": [
+    {
+      "packageId": "PKG-001",
+      "packageName": "DC-00 Technical Route",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 6,
+      "systemGroups": [
+        "总体技术路线"
+      ],
+      "topics": [
+        "Technical Route"
+      ],
+      "accessLevels": {
+        "Public Summary": 6
+      },
+      "summary": "DC-00 Technical Route contains 6 desensitized records related to 总体技术路线.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-002",
+      "packageName": "DC-01 MV Power",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 5,
+      "systemGroups": [
+        "中压电力系统"
+      ],
+      "topics": [
+        "中压柜内部"
+      ],
+      "accessLevels": {
+        "Public Summary": 5
+      },
+      "summary": "DC-01 MV Power contains 5 desensitized records related to 中压电力系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-003",
+      "packageName": "DC-02 LV Power",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 8,
+      "systemGroups": [
+        "低压电力系统"
+      ],
+      "topics": [
+        "低压柜内部部件"
+      ],
+      "accessLevels": {
+        "Public Summary": 8
+      },
+      "summary": "DC-02 LV Power contains 8 desensitized records related to 低压电力系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-004",
+      "packageName": "DC-03 Cable Grounding",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 11,
+      "systemGroups": [
+        "电缆母排接地"
+      ],
+      "topics": [
+        "电气辅材"
+      ],
+      "accessLevels": {
+        "Public Summary": 11
+      },
+      "summary": "DC-03 Cable Grounding contains 11 desensitized records related to 电缆母排接地.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-005",
+      "packageName": "DC-04 HVDC UPS Battery",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 13,
+      "systemGroups": [
+        "HVDC/UPS/电池"
+      ],
+      "topics": [
+        "不间断电源",
+        "电池部件"
+      ],
+      "accessLevels": {
+        "Public Summary": 13
+      },
+      "summary": "DC-04 HVDC UPS Battery contains 13 desensitized records related to HVDC/UPS/电池.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-006",
+      "packageName": "DC-05 IT Rack PDU",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 15,
+      "systemGroups": [
+        "IT方仓/机柜通道"
+      ],
+      "topics": [
+        "IT机柜与配电末端",
+        "机柜附件"
+      ],
+      "accessLevels": {
+        "Public Summary": 15
+      },
+      "summary": "DC-05 IT Rack PDU contains 15 desensitized records related to IT方仓/机柜通道.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-007",
+      "packageName": "DC-06 HVAC Water",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 20,
+      "systemGroups": [
+        "暖通/水处理"
+      ],
+      "topics": [
+        "制冷与水处理",
+        "暖通部件"
+      ],
+      "accessLevels": {
+        "Public Summary": 20
+      },
+      "summary": "DC-06 HVAC Water contains 20 desensitized records related to 暖通/水处理.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-008",
+      "packageName": "DC-07 Generator Fuel",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 16,
+      "systemGroups": [
+        "柴发与油路"
+      ],
+      "topics": [
+        "应急电源",
+        "柴发部件",
+        "油路部件"
+      ],
+      "accessLevels": {
+        "Public Summary": 16
+      },
+      "summary": "DC-07 Generator Fuel contains 16 desensitized records related to 柴发与油路.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-009",
+      "packageName": "DC-08 Fire Safety",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 15,
+      "systemGroups": [
+        "消防与安防"
+      ],
+      "topics": [
+        "消防安全",
+        "消防部件"
+      ],
+      "accessLevels": {
+        "Public Summary": 15
+      },
+      "summary": "DC-08 Fire Safety contains 15 desensitized records related to 消防与安防.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-010",
+      "packageName": "DC-09 ELV DCIM Security",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 15,
+      "systemGroups": [
+        "弱电智能化/监控"
+      ],
+      "topics": [
+        "传感监控",
+        "监控与智能化"
+      ],
+      "accessLevels": {
+        "Public Summary": 15
+      },
+      "summary": "DC-09 ELV DCIM Security contains 15 desensitized records related to 弱电智能化/监控.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-011",
+      "packageName": "DC-10 Fiber Network",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 10,
+      "systemGroups": [
+        "网络与光纤"
+      ],
+      "topics": [
+        "网络与路由",
+        "网络部件"
+      ],
+      "accessLevels": {
+        "Public Summary": 10
+      },
+      "summary": "DC-10 Fiber Network contains 10 desensitized records related to 网络与光纤.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-012",
+      "packageName": "DC-11 Civil Installation",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 10,
+      "systemGroups": [
+        "土建接口与安装"
+      ],
+      "topics": [
+        "土建机电接口"
+      ],
+      "accessLevels": {
+        "Public Summary": 10
+      },
+      "summary": "DC-11 Civil Installation contains 10 desensitized records related to 土建接口与安装.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-013",
+      "packageName": "DC-12 Acceptance Evidence",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 12,
+      "systemGroups": [
+        "验收与资料"
+      ],
+      "topics": [
+        "验收证据"
+      ],
+      "accessLevels": {
+        "Request Access": 12
+      },
+      "summary": "DC-12 Acceptance Evidence contains 12 desensitized records related to 验收与资料.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-014",
+      "packageName": "DC-13 Website Data Interface",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 10,
+      "systemGroups": [
+        "网站与数据接口"
+      ],
+      "topics": [
+        "网站接口"
+      ],
+      "accessLevels": {
+        "Public Summary": 10
+      },
+      "summary": "DC-13 Website Data Interface contains 10 desensitized records related to 网站与数据接口.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-015",
+      "packageName": "DC-14 Calculation Model",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 24,
+      "systemGroups": [
+        "计算模型"
+      ],
+      "topics": [
+        "计算参数"
+      ],
+      "accessLevels": {
+        "Request Access": 24
+      },
+      "summary": "DC-14 Calculation Model contains 24 desensitized records related to 计算模型.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-016",
+      "packageName": "DC-HVAC-PLC Cooling Control",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 46,
+      "systemGroups": [
+        "暖通冷源控制"
+      ],
+      "topics": [
+        "Operation and Monitoring / Cooling Source Control"
+      ],
+      "accessLevels": {
+        "Public Summary": 5,
+        "Request Access": 35,
+        "Restricted": 6
+      },
+      "summary": "DC-HVAC-PLC Cooling Control contains 46 desensitized records related to 暖通冷源控制.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-017",
+      "packageName": "DC-HVAC-PLC Cooling Control Restricted",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "受限资料"
+      ],
+      "topics": [
+        "Operation and Monitoring / Cooling Source Control"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-HVAC-PLC Cooling Control Restricted contains 1 desensitized records related to 受限资料.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-018",
+      "packageName": "DC-PLC Restricted Package",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "网站接口"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC Restricted Package contains 1 desensitized records related to 网站接口.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-019",
+      "packageName": "DC-PLC-01 Architecture",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "PLC高可用冷源群控架构"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Public Summary": 1
+      },
+      "summary": "DC-PLC-01 Architecture contains 1 desensitized records related to PLC高可用冷源群控架构.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-020",
+      "packageName": "DC-PLC-01 Control Architecture",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源控制系统"
+      ],
+      "topics": [
+        "PLC与DDC方案比选"
+      ],
+      "accessLevels": {
+        "Public Summary": 1
+      },
+      "summary": "DC-PLC-01 Control Architecture contains 1 desensitized records related to 冷源控制系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-021",
+      "packageName": "DC-PLC-01 Control Route",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 7,
+      "systemGroups": [
+        "暖通自控"
+      ],
+      "topics": [
+        "Cooling PLC Control"
+      ],
+      "accessLevels": {
+        "Public Summary": 7
+      },
+      "summary": "DC-PLC-01 Control Route contains 7 desensitized records related to 暖通自控.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-022",
+      "packageName": "DC-PLC-02 CPU Hot Standby",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源控制系统"
+      ],
+      "topics": [
+        "PLC双CPU热备"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-02 CPU Hot Standby contains 1 desensitized records related to 冷源控制系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-023",
+      "packageName": "DC-PLC-02 Case Parameters",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 10,
+      "systemGroups": [
+        "暖通自控"
+      ],
+      "topics": [
+        "Cooling PLC Control"
+      ],
+      "accessLevels": {
+        "Public Summary": 9,
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-02 Case Parameters contains 10 desensitized records related to 暖通自控.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-024",
+      "packageName": "DC-PLC-02 Server",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "PLC高可用冷源群控架构"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-02 Server contains 1 desensitized records related to PLC高可用冷源群控架构.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-025",
+      "packageName": "DC-PLC-03 Network",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "PLC高可用冷源群控架构"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-03 Network contains 1 desensitized records related to PLC高可用冷源群控架构.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-026",
+      "packageName": "DC-PLC-03 Redundancy",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 10,
+      "systemGroups": [
+        "暖通自控"
+      ],
+      "topics": [
+        "Cooling PLC Control"
+      ],
+      "accessLevels": {
+        "Public Summary": 10
+      },
+      "summary": "DC-PLC-03 Redundancy contains 10 desensitized records related to 暖通自控.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-027",
+      "packageName": "DC-PLC-03 Server Redundancy",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源控制系统"
+      ],
+      "topics": [
+        "管理服务器双机热备"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-03 Server Redundancy contains 1 desensitized records related to 冷源控制系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-028",
+      "packageName": "DC-PLC-04 Power Self-hold",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 10,
+      "systemGroups": [
+        "暖通自控"
+      ],
+      "topics": [
+        "Cooling PLC Control"
+      ],
+      "accessLevels": {
+        "Public Summary": 10
+      },
+      "summary": "DC-PLC-04 Power Self-hold contains 10 desensitized records related to 暖通自控.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-029",
+      "packageName": "DC-PLC-04 Principle",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制原则"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Public Summary": 1
+      },
+      "summary": "DC-PLC-04 Principle contains 1 desensitized records related to 控制原则.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-030",
+      "packageName": "DC-PLC-04 Ring Network",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源控制系统"
+      ],
+      "topics": [
+        "工业环网冗余"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-04 Ring Network contains 1 desensitized records related to 冷源控制系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-031",
+      "packageName": "DC-PLC-05 I/O Point List",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 37,
+      "systemGroups": [
+        "暖通自控"
+      ],
+      "topics": [
+        "Cooling PLC Control"
+      ],
+      "accessLevels": {
+        "Public Summary": 37
+      },
+      "summary": "DC-PLC-05 I/O Point List contains 37 desensitized records related to 暖通自控.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-032",
+      "packageName": "DC-PLC-05 Interface",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制原则"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-05 Interface contains 1 desensitized records related to 控制原则.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-033",
+      "packageName": "DC-PLC-05 Power Redundancy",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源控制系统"
+      ],
+      "topics": [
+        "系统供电冗余"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-05 Power Redundancy contains 1 desensitized records related to 冷源控制系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-034",
+      "packageName": "DC-PLC-06 Control Logic",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 15,
+      "systemGroups": [
+        "暖通自控"
+      ],
+      "topics": [
+        "Cooling PLC Control"
+      ],
+      "accessLevels": {
+        "Public Summary": 15
+      },
+      "summary": "DC-PLC-06 Control Logic contains 15 desensitized records related to 暖通自控.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-035",
+      "packageName": "DC-PLC-06 Economy",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制原则"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Public Summary": 1
+      },
+      "summary": "DC-PLC-06 Economy contains 1 desensitized records related to 控制原则.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-036",
+      "packageName": "DC-PLC-07 Alarm Dictionary",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 20,
+      "systemGroups": [
+        "暖通自控"
+      ],
+      "topics": [
+        "Cooling PLC Control"
+      ],
+      "accessLevels": {
+        "Request Access": 20
+      },
+      "summary": "DC-PLC-07 Alarm Dictionary contains 20 desensitized records related to 暖通自控.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-037",
+      "packageName": "DC-PLC-08 Calculation Model",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 15,
+      "systemGroups": [
+        "暖通自控"
+      ],
+      "topics": [
+        "Cooling PLC Control"
+      ],
+      "accessLevels": {
+        "Public Summary": 15
+      },
+      "summary": "DC-PLC-08 Calculation Model contains 15 desensitized records related to 暖通自控.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-038",
+      "packageName": "DC-PLC-09 Testing Acceptance",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 15,
+      "systemGroups": [
+        "暖通自控"
+      ],
+      "topics": [
+        "Cooling PLC Control"
+      ],
+      "accessLevels": {
+        "Request Access": 15
+      },
+      "summary": "DC-PLC-09 Testing Acceptance contains 15 desensitized records related to 暖通自控.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-039",
+      "packageName": "DC-PLC-10 Chiller Points",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制点位"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-10 Chiller Points contains 1 desensitized records related to 控制点位.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-040",
+      "packageName": "DC-PLC-10 IO Point Model",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源控制系统"
+      ],
+      "topics": [
+        "I/O点表统计"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-10 IO Point Model contains 1 desensitized records related to 冷源控制系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-041",
+      "packageName": "DC-PLC-10 Website Interface",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 10,
+      "systemGroups": [
+        "暖通自控"
+      ],
+      "topics": [
+        "Cooling PLC Control"
+      ],
+      "accessLevels": {
+        "Public Summary": 10
+      },
+      "summary": "DC-PLC-10 Website Interface contains 10 desensitized records related to 暖通自控.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-042",
+      "packageName": "DC-PLC-11 DI Points",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源控制系统"
+      ],
+      "topics": [
+        "I/O点表统计"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-11 DI Points contains 1 desensitized records related to 冷源控制系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-043",
+      "packageName": "DC-PLC-11 Energy Data",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制点位"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-11 Energy Data contains 1 desensitized records related to 控制点位.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-044",
+      "packageName": "DC-PLC-12 DO Points",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源控制系统"
+      ],
+      "topics": [
+        "I/O点表统计"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-12 DO Points contains 1 desensitized records related to 冷源控制系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-045",
+      "packageName": "DC-PLC-12 Pump Points",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制点位"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-12 Pump Points contains 1 desensitized records related to 控制点位.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-046",
+      "packageName": "DC-PLC-13 AI Points",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源控制系统"
+      ],
+      "topics": [
+        "I/O点表统计"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-13 AI Points contains 1 desensitized records related to 冷源控制系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-047",
+      "packageName": "DC-PLC-13 Secondary Pump",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制点位"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-13 Secondary Pump contains 1 desensitized records related to 控制点位.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-048",
+      "packageName": "DC-PLC-14 AO Points",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源控制系统"
+      ],
+      "topics": [
+        "I/O点表统计"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-14 AO Points contains 1 desensitized records related to 冷源控制系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-049",
+      "packageName": "DC-PLC-14 Condenser Pump",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制点位"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-14 Condenser Pump contains 1 desensitized records related to 控制点位.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-050",
+      "packageName": "DC-PLC-15 Cooling Tower",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制点位"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-15 Cooling Tower contains 1 desensitized records related to 控制点位.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-051",
+      "packageName": "DC-PLC-16 Valve OnOff",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制点位"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-16 Valve OnOff contains 1 desensitized records related to 控制点位.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-052",
+      "packageName": "DC-PLC-17 Modulating Valve",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制点位"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-17 Modulating Valve contains 1 desensitized records related to 控制点位.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-053",
+      "packageName": "DC-PLC-20 Chiller Control Points",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷水机组"
+      ],
+      "topics": [
+        "冷源关键控制点"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-20 Chiller Control Points contains 1 desensitized records related to 冷水机组.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-054",
+      "packageName": "DC-PLC-20 Sensors",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "传感器与仪表"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-20 Sensors contains 1 desensitized records related to 传感器与仪表.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-055",
+      "packageName": "DC-PLC-21 DP Sensor",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "传感器与仪表"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-21 DP Sensor contains 1 desensitized records related to 传感器与仪表.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-056",
+      "packageName": "DC-PLC-21 Primary Pump Points",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷冻一次泵"
+      ],
+      "topics": [
+        "冷源关键控制点"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-21 Primary Pump Points contains 1 desensitized records related to 冷冻一次泵.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-057",
+      "packageName": "DC-PLC-22 Flow Meter",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "传感器与仪表"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-22 Flow Meter contains 1 desensitized records related to 传感器与仪表.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-058",
+      "packageName": "DC-PLC-22 Secondary Pump Points",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷冻二次泵"
+      ],
+      "topics": [
+        "冷源关键控制点"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-22 Secondary Pump Points contains 1 desensitized records related to 冷冻二次泵.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-059",
+      "packageName": "DC-PLC-23 Condenser Pump Points",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷却泵"
+      ],
+      "topics": [
+        "冷源关键控制点"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-23 Condenser Pump Points contains 1 desensitized records related to 冷却泵.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-060",
+      "packageName": "DC-PLC-23 Metering",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "传感器与仪表"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-23 Metering contains 1 desensitized records related to 传感器与仪表.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-061",
+      "packageName": "DC-PLC-24 Cooling Tower Points",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷却塔"
+      ],
+      "topics": [
+        "冷源关键控制点"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-24 Cooling Tower Points contains 1 desensitized records related to 冷却塔.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-062",
+      "packageName": "DC-PLC-25 Motorized Valve Points",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "电动开关阀"
+      ],
+      "topics": [
+        "冷源关键控制点"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-25 Motorized Valve Points contains 1 desensitized records related to 电动开关阀.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-063",
+      "packageName": "DC-PLC-26 Modulating Valve Points",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "电动调节阀"
+      ],
+      "topics": [
+        "冷源关键控制点"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-26 Modulating Valve Points contains 1 desensitized records related to 电动调节阀.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-064",
+      "packageName": "DC-PLC-27 Sensors",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "传感器"
+      ],
+      "topics": [
+        "冷源关键控制点"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-27 Sensors contains 1 desensitized records related to 传感器.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-065",
+      "packageName": "DC-PLC-30 CPU Module",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "PLC控制柜"
+      ],
+      "topics": [
+        "PLC模块配置"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-30 CPU Module contains 1 desensitized records related to PLC控制柜.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-066",
+      "packageName": "DC-PLC-30 Calculation",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "计算模型"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Public Summary": 1
+      },
+      "summary": "DC-PLC-30 Calculation contains 1 desensitized records related to 计算模型.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-067",
+      "packageName": "DC-PLC-31 DI Module",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "PLC控制柜"
+      ],
+      "topics": [
+        "PLC模块配置"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-31 DI Module contains 1 desensitized records related to PLC控制柜.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-068",
+      "packageName": "DC-PLC-31 IO Calculation",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "计算模型"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-31 IO Calculation contains 1 desensitized records related to 计算模型.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-069",
+      "packageName": "DC-PLC-32 DO Module",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "PLC控制柜"
+      ],
+      "topics": [
+        "PLC模块配置"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-32 DO Module contains 1 desensitized records related to PLC控制柜.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-070",
+      "packageName": "DC-PLC-32 Network Calculation",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "计算模型"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-32 Network Calculation contains 1 desensitized records related to 计算模型.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-071",
+      "packageName": "DC-PLC-33 AI Module",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "PLC控制柜"
+      ],
+      "topics": [
+        "PLC模块配置"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-33 AI Module contains 1 desensitized records related to PLC控制柜.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-072",
+      "packageName": "DC-PLC-33 Power Calculation",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "计算模型"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-33 Power Calculation contains 1 desensitized records related to 计算模型.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-073",
+      "packageName": "DC-PLC-34 AO Module",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "PLC控制柜"
+      ],
+      "topics": [
+        "PLC模块配置"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-34 AO Module contains 1 desensitized records related to PLC控制柜.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-074",
+      "packageName": "DC-PLC-35 Remote IO",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "远程I/O"
+      ],
+      "topics": [
+        "PLC模块配置"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-35 Remote IO contains 1 desensitized records related to 远程I/O.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-075",
+      "packageName": "DC-PLC-36 Industrial Switch",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "网络设备"
+      ],
+      "topics": [
+        "PLC模块配置"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-36 Industrial Switch contains 1 desensitized records related to 网络设备.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-076",
+      "packageName": "DC-PLC-40 Commissioning",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "调试验收"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-40 Commissioning contains 1 desensitized records related to 调试验收.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-077",
+      "packageName": "DC-PLC-40 Start Sequence",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源群控"
+      ],
+      "topics": [
+        "控制逻辑矩阵"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-40 Start Sequence contains 1 desensitized records related to 冷源群控.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-078",
+      "packageName": "DC-PLC-41 Hot Standby Test",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "调试验收"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-41 Hot Standby Test contains 1 desensitized records related to 调试验收.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-079",
+      "packageName": "DC-PLC-41 Stop Sequence",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源群控"
+      ],
+      "topics": [
+        "控制逻辑矩阵"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-41 Stop Sequence contains 1 desensitized records related to 冷源群控.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-080",
+      "packageName": "DC-PLC-42 Chiller Staging",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源群控"
+      ],
+      "topics": [
+        "控制逻辑矩阵"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-42 Chiller Staging contains 1 desensitized records related to 冷源群控.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-081",
+      "packageName": "DC-PLC-42 Network Test",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "调试验收"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-42 Network Test contains 1 desensitized records related to 调试验收.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-082",
+      "packageName": "DC-PLC-43 Pump Rotation",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源群控"
+      ],
+      "topics": [
+        "控制逻辑矩阵"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-43 Pump Rotation contains 1 desensitized records related to 冷源群控.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-083",
+      "packageName": "DC-PLC-43 Self Holding Test",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "调试验收"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-43 Self Holding Test contains 1 desensitized records related to 调试验收.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-084",
+      "packageName": "DC-PLC-44 Alarm Test",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "调试验收"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-44 Alarm Test contains 1 desensitized records related to 调试验收.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-085",
+      "packageName": "DC-PLC-44 Low Flow Protection",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源保护"
+      ],
+      "topics": [
+        "控制逻辑矩阵"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-44 Low Flow Protection contains 1 desensitized records related to 冷源保护.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-086",
+      "packageName": "DC-PLC-45 Freeze Protection",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源保护"
+      ],
+      "topics": [
+        "控制逻辑矩阵"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-45 Freeze Protection contains 1 desensitized records related to 冷源保护.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-087",
+      "packageName": "DC-PLC-46 Water Hammer",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源保护"
+      ],
+      "topics": [
+        "控制逻辑矩阵"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-46 Water Hammer contains 1 desensitized records related to 冷源保护.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-088",
+      "packageName": "DC-PLC-47 Degraded Mode",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源群控"
+      ],
+      "topics": [
+        "控制逻辑矩阵"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-47 Degraded Mode contains 1 desensitized records related to 冷源群控.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-089",
+      "packageName": "DC-PLC-50 Chiller Alarm",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "报警管理"
+      ],
+      "topics": [
+        "报警字典"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-50 Chiller Alarm contains 1 desensitized records related to 报警管理.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-090",
+      "packageName": "DC-PLC-50 Strategy",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制策略"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-50 Strategy contains 1 desensitized records related to 控制策略.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-091",
+      "packageName": "DC-PLC-51 Pump Alarm",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "报警管理"
+      ],
+      "topics": [
+        "报警字典"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-51 Pump Alarm contains 1 desensitized records related to 报警管理.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-092",
+      "packageName": "DC-PLC-51 Stop Strategy",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制策略"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-51 Stop Strategy contains 1 desensitized records related to 控制策略.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-093",
+      "packageName": "DC-PLC-52 Chiller Staging",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制策略"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-52 Chiller Staging contains 1 desensitized records related to 控制策略.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-094",
+      "packageName": "DC-PLC-52 Valve Alarm",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "报警管理"
+      ],
+      "topics": [
+        "报警字典"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-52 Valve Alarm contains 1 desensitized records related to 报警管理.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-095",
+      "packageName": "DC-PLC-53 Communication Alarm",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "报警管理"
+      ],
+      "topics": [
+        "报警字典"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-53 Communication Alarm contains 1 desensitized records related to 报警管理.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-096",
+      "packageName": "DC-PLC-53 Rotation",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制策略"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Public Summary": 1
+      },
+      "summary": "DC-PLC-53 Rotation contains 1 desensitized records related to 控制策略.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-097",
+      "packageName": "DC-PLC-54 Freeze Protection",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制策略"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-54 Freeze Protection contains 1 desensitized records related to 控制策略.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-098",
+      "packageName": "DC-PLC-54 Temperature Alarm",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "报警管理"
+      ],
+      "topics": [
+        "报警字典"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-54 Temperature Alarm contains 1 desensitized records related to 报警管理.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-099",
+      "packageName": "DC-PLC-55 Flow DP Alarm",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "报警管理"
+      ],
+      "topics": [
+        "报警字典"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-55 Flow DP Alarm contains 1 desensitized records related to 报警管理.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-100",
+      "packageName": "DC-PLC-55 Water Hammer",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制策略"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-55 Water Hammer contains 1 desensitized records related to 控制策略.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-101",
+      "packageName": "DC-PLC-56 Degraded Mode",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制策略"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-56 Degraded Mode contains 1 desensitized records related to 控制策略.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-102",
+      "packageName": "DC-PLC-57 AI Interface",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制策略"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-57 AI Interface contains 1 desensitized records related to 控制策略.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-103",
+      "packageName": "DC-PLC-60 Cabinet",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制设备"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-60 Cabinet contains 1 desensitized records related to 控制设备.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-104",
+      "packageName": "DC-PLC-60 Cooling Energy Calculation",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源控制系统"
+      ],
+      "topics": [
+        "能效与AI预留"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-60 Cooling Energy Calculation contains 1 desensitized records related to 冷源控制系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-105",
+      "packageName": "DC-PLC-61 Chiller COP",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源控制系统"
+      ],
+      "topics": [
+        "能效与AI预留"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-61 Chiller COP contains 1 desensitized records related to 冷源控制系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-106",
+      "packageName": "DC-PLC-61 Remote IO",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制设备"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-61 Remote IO contains 1 desensitized records related to 控制设备.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-107",
+      "packageName": "DC-PLC-62 AI Optimization Interface",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冷源控制系统"
+      ],
+      "topics": [
+        "能效与AI预留"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-62 AI Optimization Interface contains 1 desensitized records related to 冷源控制系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-108",
+      "packageName": "DC-PLC-62 HMI",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制设备"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-62 HMI contains 1 desensitized records related to 控制设备.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-109",
+      "packageName": "DC-PLC-63 Cable",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制设备"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-63 Cable contains 1 desensitized records related to 控制设备.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-110",
+      "packageName": "DC-PLC-63 PLC Cabinet",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "PLC控制柜"
+      ],
+      "topics": [
+        "控制柜与辅材"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-63 PLC Cabinet contains 1 desensitized records related to PLC控制柜.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-111",
+      "packageName": "DC-PLC-64 Shielded Cable",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制线缆"
+      ],
+      "topics": [
+        "控制柜与辅材"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-64 Shielded Cable contains 1 desensitized records related to 控制线缆.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-112",
+      "packageName": "DC-PLC-64 VFD Interface",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "控制设备"
+      ],
+      "topics": [
+        "Control System"
+      ],
+      "accessLevels": {
+        "Request Access": 1
+      },
+      "summary": "DC-PLC-64 VFD Interface contains 1 desensitized records related to 控制设备.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-113",
+      "packageName": "DC-PLC-65 Terminal Marking",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "端子与标识"
+      ],
+      "topics": [
+        "控制柜与辅材"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-65 Terminal Marking contains 1 desensitized records related to 端子与标识.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-114",
+      "packageName": "DC-PLC-70 FAT",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "FAT/SAT"
+      ],
+      "topics": [
+        "测试验收"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-70 FAT contains 1 desensitized records related to FAT/SAT.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-115",
+      "packageName": "DC-PLC-71 SAT",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "FAT/SAT"
+      ],
+      "topics": [
+        "测试验收"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-71 SAT contains 1 desensitized records related to FAT/SAT.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-116",
+      "packageName": "DC-PLC-72 CPU Failover Test",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冗余测试"
+      ],
+      "topics": [
+        "测试验收"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-72 CPU Failover Test contains 1 desensitized records related to 冗余测试.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-117",
+      "packageName": "DC-PLC-73 Ring Test",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "冗余测试"
+      ],
+      "topics": [
+        "测试验收"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-73 Ring Test contains 1 desensitized records related to 冗余测试.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-118",
+      "packageName": "DC-PLC-74 Self-hold Test",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "设备自保持"
+      ],
+      "topics": [
+        "测试验收"
+      ],
+      "accessLevels": {
+        "Restricted": 1
+      },
+      "summary": "DC-PLC-74 Self-hold Test contains 1 desensitized records related to 设备自保持.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-119",
+      "packageName": "DC-WEB-PLC",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 2,
+      "systemGroups": [
+        "网站接口"
+      ],
+      "topics": [
+        "Control System",
+        "网站数据接口"
+      ],
+      "accessLevels": {
+        "Public": 1,
+        "Public Summary": 1
+      },
+      "summary": "DC-WEB-PLC contains 2 desensitized records related to 网站接口.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-120",
+      "packageName": "DC-中压电力",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 2,
+      "systemGroups": [
+        "中压电力系统"
+      ],
+      "topics": [
+        "中压电力"
+      ],
+      "accessLevels": {
+        "Public Summary": 2
+      },
+      "summary": "DC-中压电力 contains 2 desensitized records related to 中压电力系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-121",
+      "packageName": "DC-保护计量",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 2,
+      "systemGroups": [
+        "中压电力系统"
+      ],
+      "topics": [
+        "保护计量"
+      ],
+      "accessLevels": {
+        "Public Summary": 2
+      },
+      "summary": "DC-保护计量 contains 2 desensitized records related to 中压电力系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-122",
+      "packageName": "DC-变压器与低压柜",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 4,
+      "systemGroups": [
+        "低压电力系统"
+      ],
+      "topics": [
+        "变压器与低压柜"
+      ],
+      "accessLevels": {
+        "Public Summary": 4
+      },
+      "summary": "DC-变压器与低压柜 contains 4 desensitized records related to 低压电力系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-123",
+      "packageName": "DC-操作电源",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "中压电力系统"
+      ],
+      "topics": [
+        "操作电源"
+      ],
+      "accessLevels": {
+        "Public Summary": 1
+      },
+      "summary": "DC-操作电源 contains 1 desensitized records related to 中压电力系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-124",
+      "packageName": "DC-电能质量",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 2,
+      "systemGroups": [
+        "低压电力系统"
+      ],
+      "topics": [
+        "电能质量"
+      ],
+      "accessLevels": {
+        "Public Summary": 2
+      },
+      "summary": "DC-电能质量 contains 2 desensitized records related to 低压电力系统.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    },
+    {
+      "packageId": "PKG-125",
+      "packageName": "WEB-DC-Cooling-Control",
+      "section": "Featured Services",
+      "service": "Data Center Professionalism",
+      "recordCount": 1,
+      "systemGroups": [
+        "网站数据接口"
+      ],
+      "topics": [
+        "Operation and Monitoring / Cooling Source Control"
+      ],
+      "accessLevels": {
+        "Public Summary": 1
+      },
+      "summary": "WEB-DC-Cooling-Control contains 1 desensitized records related to 网站数据接口.",
+      "requestPage": "internal-data-room.html",
+      "containsNoFileLinks": true
+    }
+  ]
+}

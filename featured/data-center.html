@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Center Professionalism | Nehemiah Reconstruction Supply Chain Initiative</title>
+  <meta name="description" content="A desensitized data center professional service database covering equipment selection, technical route, PLC cooling control, risk control, acceptance evidence and restricted data room interface.">
+  <link rel="stylesheet" href="../assets/data-center.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="../index.html">Nehemiah Reconstruction Supply Chain</a>
+    <nav class="nav-links">
+      <a href="../index.html#values">Values</a>
+      <a href="../index.html#engineering-practice">Engineering Practice</a>
+      <a href="../index.html#featured-services">Featured Services</a>
+      <a href="../index.html#client-focus">Client Focus</a>
+      <a href="../internal-data-room.html">Restricted Data Room</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container">
+    <div class="kicker">Featured Services · Data Center Professionalism</div>
+    <h1>Data Center Technical Route, Equipment Selection and Acceptance Database</h1>
+    <p class="lead">
+      This page is a public-summary interface for a desensitized data center decision database.
+      It organizes technical route, equipment selection, PLC cooling control, calculation entry,
+      risk measures, acceptance evidence, operation handover, and restricted data access.
+    </p>
+    <div class="badges">
+      <span class="badge">Technical route</span>
+      <span class="badge">Equipment selection</span>
+      <span class="badge">PLC cooling control</span>
+      <span class="badge">Risk · measure · evidence</span>
+      <span class="badge">Public summary + request access</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="countRecords">—</b><span>master records</span></div>
+      <div class="stat"><b id="countSystems">—</b><span>system groups</span></div>
+      <div class="stat"><b id="countPackages">—</b><span>restricted packages</span></div>
+      <div class="stat"><b id="countCalc">—</b><span>calculation-entry records</span></div>
+    </div>
+    <p class="note">
+      Public pages show only desensitized summaries and decision logic. Original drawings, raw
+      project files, complete PLC programs, full I/O lists, prices, supplier details, client-sensitive
+      records, and contract documents are not published here.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>System Groups</h2>
+      <a class="button secondary" href="../internal-data-room.html">Request restricted access →</a>
+    </div>
+    <div class="card-grid" id="systemCards"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Master Database Interface</h2>
+      <span><b id="filteredCount">—</b> records shown</span>
+    </div>
+    <div class="filters">
+      <input id="search" type="search" placeholder="Search equipment, PLC, risk, formula, evidence...">
+      <select id="filterGroup"></select>
+      <select id="filterTopic"></select>
+      <select id="filterAccess"></select>
+    </div>
+    <div class="table-wrap">
+      <table aria-label="Data center master decision table">
+        <thead>
+          <tr>
+            <th>ID / Access</th>
+            <th>System</th>
+            <th>Item</th>
+            <th>Recommended route / spec</th>
+            <th>Why selected</th>
+            <th>Main risk</th>
+            <th>Acceptance evidence</th>
+            <th>Web ID</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr><td colspan="8">Loading database...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="detail" id="detail">
+      <h2 id="detailTitle"></h2>
+      <p id="detailMeta"></p>
+      <div class="detail-grid" id="detailGrid"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>
+      Nehemiah Reconstruction Supply Chain Initiative · Data Center Professionalism.
+      Detailed PPT materials, project tables, checklists, PLC logic, I/O tables, photos and records
+      are available only after review.
+    </p>
+  </div>
+</footer>
+<script src="../assets/data-center.js"></script>
+</body>
+</html>

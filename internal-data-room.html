@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Restricted Data Room | Nehemiah Reconstruction Supply Chain Initiative</title>
+  <meta name="description" content="Restricted data room request page for desensitized engineering and data center professional materials.">
+  <link rel="stylesheet" href="assets/data-center.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="index.html">Nehemiah Reconstruction Supply Chain</a>
+    <nav class="nav-links">
+      <a href="index.html#values">Values</a>
+      <a href="index.html#engineering-practice">Engineering Practice</a>
+      <a href="index.html#featured-services">Featured Services</a>
+      <a href="featured/data-center.html">Data Center</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container">
+    <div class="kicker">Support Layer · Not Main Navigation</div>
+    <h1>Restricted Data Room</h1>
+    <p class="lead">
+      Detailed project tables, presentation materials, selected records, checklists, PLC logic,
+      I/O point tables, charts, images and supporting data are available only to authorized
+      partners after review.
+    </p>
+    <p class="note">
+      This page is an access-request entry. It does not publish confidential files, original
+      specifications, raw drawings, pricing, contract documents, personal data, supplier bottom
+      prices, or client-sensitive records.
+    </p>
+    <p>
+      <a class="button" href="mailto:contact@maxwellchengresearch.com?subject=Request%20Access%20to%20Restricted%20Data%20Room&body=Name%3A%0AOrganization%3A%0ACountry%3A%0AEmail%3A%0APurpose%20of%20access%3A%0AProject%20type%3A%0ANDA%20acceptable%3A%20Yes%2FNo">
+        Request access by email →
+      </a>
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2>Access Packages</h2><span id="pkgCount">Loading...</span></div>
+    <div class="card-grid" id="packageCards"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Review Information</h2>
+    <div class="card-grid">
+      <article class="card"><h3>Who may request</h3><p>Churches, NGOs, reconstruction partners, engineering organizations, donors, institutional clients, or project owners with a legitimate project purpose.</p></article>
+      <article class="card"><h3>What to provide</h3><p>Name, organization, country, email, purpose of access, project type, requested package, and whether confidentiality terms are acceptable.</p></article>
+      <article class="card"><h3>How access is controlled</h3><p>Public summaries remain on the website. Detailed files should be shared only through controlled Drive, private repository, or protected access layer after review.</p></article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer"><div class="container">Restricted Data Room · Request-only access layer.</div></footer>
+<script>
+function escapeHtml(s){return String(s ?? "").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));}
+fetch("data/restricted-manifest.json").then(r=>r.json()).then(data=>{
+  const pkgs=data.packages || [];
+  document.getElementById("pkgCount").textContent=pkgs.length+" packages";
+  document.getElementById("packageCards").innerHTML=pkgs.map(p=>`
+    <article class="card">
+      <h3>${escapeHtml(p.packageName)}</h3>
+      <p>${escapeHtml(p.recordCount)} records · ${escapeHtml((p.systemGroups||[]).slice(0,4).join(" / "))}</p>
+      <p><span class="tag req">Request Access</span></p>
+    </article>`).join("");
+});
+</script>
+</body>
+</html>

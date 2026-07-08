@@ -1,0 +1,71 @@
+{
+  "siteName": "Nehemiah Reconstruction Supply Chain Initiative",
+  "version": "site-map-v1",
+  "primarySections": [
+    {
+      "id": "values",
+      "title": "Values",
+      "page": "index.html#values"
+    },
+    {
+      "id": "engineering-practice",
+      "title": "Engineering Practice",
+      "page": "index.html#engineering-practice"
+    },
+    {
+      "id": "featured-services",
+      "title": "Featured Services",
+      "page": "index.html#featured-services",
+      "children": [
+        {
+          "id": "data-center",
+          "title": "Data Center Professionalism",
+          "page": "featured/data-center.html",
+          "data": "data/featured-data-center-master.json",
+          "access": "public-summary"
+        },
+        {
+          "id": "china-supply-chain",
+          "title": "China Supply Chain",
+          "page": "featured-services.html#china-supply-chain",
+          "access": "public-summary"
+        },
+        {
+          "id": "community-om",
+          "title": "Community Operation and Maintenance",
+          "page": "featured-services.html#community-om",
+          "access": "public-summary"
+        },
+        {
+          "id": "customized-client-service",
+          "title": "Customized Client Service",
+          "page": "featured-services.html#customized-client-service",
+          "access": "public-summary"
+        }
+      ]
+    },
+    {
+      "id": "client-focus",
+      "title": "Client Focus",
+      "page": "index.html#client-focus"
+    },
+    {
+      "id": "lessons-learned",
+      "title": "Lessons Learned",
+      "page": "index.html#lessons-learned"
+    },
+    {
+      "id": "contact",
+      "title": "Contact",
+      "page": "index.html#contact"
+    }
+  ],
+  "supportLayers": [
+    {
+      "id": "restricted-data-room",
+      "title": "Restricted Data Room",
+      "page": "internal-data-room.html",
+      "notMainNav": true
+    }
+  ]
+}

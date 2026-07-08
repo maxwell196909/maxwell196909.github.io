@@ -1,231 +1,1470 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Data Center Professionalism | Nehemiah Reconstruction Supply Chain Initiative</title>
-  <meta name="description" content="A desensitized data center professional service database covering equipment selection, technical route, PLC cooling control, risk control, acceptance evidence and restricted data room interface.">
-  <link rel="stylesheet" href="../assets/data-center.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Center Professionalism | Nehemiah Reconstruction Supply Chain</title>
+  <meta name="description" content="A curated public technical database for data center technical route, equipment selection, engineering decision logic, risk control, acceptance evidence, and restricted data access." />
+  <style>
+    :root {
+      --navy:#10243a; --ink:#0f172a; --muted:#5f6b7a; --line:#e5eaf1; --soft:#f6f8fb;
+      --green:#0f766e; --blue:#1e3a8a; --gold:#b7791f; --white:#fff; --shadow:0 18px 45px rgba(15,23,42,.08);
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:linear-gradient(180deg,#fff 0%,#f8fafc 100%); line-height:1.6; }
+    a { color:var(--blue); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .topbar { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.94); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); }
+    .nav { max-width:1180px; margin:0 auto; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { font-weight:800; color:var(--blue); letter-spacing:.01em; }
+    .navlinks { display:flex; flex-wrap:wrap; gap:18px; align-items:center; font-size:14px; text-transform:capitalize; }
+    .navlinks a { color:#21324a; font-weight:600; }
+    .container { max-width:1180px; margin:0 auto; padding:0 24px; }
+    .hero { padding:68px 0 44px; }
+    .kicker { color:var(--green); text-transform:uppercase; font-size:13px; font-weight:800; letter-spacing:.13em; }
+    h1 { font-size:clamp(42px,6.6vw,72px); line-height:1.02; margin:18px 0 22px; letter-spacing:-.055em; max-width:940px; }
+    .lead { max-width:900px; color:#334155; font-size:18px; }
+    .chips { display:flex; flex-wrap:wrap; gap:10px; margin:26px 0; }
+    .chip { border:1px solid var(--line); border-radius:999px; padding:8px 14px; background:#fff; color:#334155; font-size:13px; }
+    .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:28px 0; }
+    .stat { background:#fff; border:1px solid var(--line); border-radius:16px; padding:22px; box-shadow:var(--shadow); }
+    .stat b { display:block; color:var(--blue); font-size:30px; }
+    .stat span { color:#64748b; font-size:13px; }
+    .note { border-left:4px solid var(--green); background:#f8fafc; border-radius:12px; padding:16px 18px; color:#334155; }
+    section { padding:42px 0; }
+    .section-head { display:flex; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:22px; }
+    h2 { font-size:32px; line-height:1.15; margin:0 0 8px; letter-spacing:-.035em; }
+    .subtle { color:#64748b; margin:0; }
+    .group-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .group-card { background:#fff; border:1px solid var(--line); border-radius:18px; padding:20px; min-height:132px; box-shadow:var(--shadow); cursor:pointer; transition:.18s ease; }
+    .group-card:hover { transform:translateY(-2px); border-color:#b7c4d3; }
+    .group-card h3 { margin:0 0 10px; font-size:18px; }
+    .group-card p { margin:0; color:#526071; }
+    .group-card .count { display:inline-block; margin-top:12px; color:var(--blue); font-weight:800; }
+    .toolbar { display:grid; grid-template-columns:1.5fr .8fr .8fr .8fr; gap:10px; margin:18px 0; }
+    input, select { width:100%; padding:13px 14px; border:1px solid var(--line); border-radius:12px; background:#fff; font-size:14px; color:#0f172a; }
+    .table-wrap { overflow:auto; border:1px solid var(--line); border-radius:18px; background:#fff; box-shadow:var(--shadow); }
+    table { width:100%; min-width:1120px; border-collapse:collapse; font-size:13px; }
+    th { background:#f1f5f9; text-align:left; padding:13px; color:#334155; font-weight:800; border-bottom:1px solid var(--line); }
+    td { padding:14px 13px; border-bottom:1px solid var(--line); vertical-align:top; color:#334155; }
+    tr.record-row { cursor:pointer; }
+    tr.record-row:hover { background:#f8fafc; }
+    .badge { display:inline-block; border-radius:999px; background:#eaf1ff; color:#1e3a8a; padding:6px 9px; font-size:12px; font-weight:800; }
+    .small { color:#64748b; font-size:12px; display:block; margin-top:4px; }
+    .truncate { max-width:240px; display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; overflow:hidden; }
+    .detail { display:none; position:fixed; inset:0; background:rgba(15,23,42,.44); z-index:50; padding:24px; overflow:auto; }
+    .detail.open { display:block; }
+    .panel { max-width:980px; margin:30px auto; background:#fff; border-radius:22px; box-shadow:0 30px 80px rgba(15,23,42,.24); overflow:hidden; }
+    .panel-head { padding:24px 28px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; gap:16px; }
+    .panel-head h3 { font-size:26px; margin:6px 0 0; line-height:1.2; }
+    .close { border:1px solid var(--line); background:#fff; border-radius:999px; width:42px; height:42px; font-size:24px; cursor:pointer; }
+    .panel-body { padding:24px 28px 30px; }
+    .detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .detail-box { border:1px solid var(--line); border-radius:16px; padding:18px; background:#fbfdff; }
+    .detail-box h4 { margin:0 0 8px; color:#0f172a; font-size:14px; text-transform:uppercase; letter-spacing:.06em; }
+    .detail-box p { margin:0; color:#334155; }
+    .access { margin-top:18px; padding:18px; border-radius:16px; background:#fff7ed; border:1px solid #fed7aa; color:#7c2d12; }
+    .button { display:inline-block; background:var(--green); color:#fff; border-radius:12px; padding:12px 16px; font-weight:800; margin-top:14px; }
+    .button:hover { text-decoration:none; background:#0b5e58; }
+    .footer { padding:42px 0 60px; color:#64748b; }
+    @media (max-width:900px) {
+      .nav { align-items:flex-start; flex-direction:column; }
+      .stats, .group-grid, .detail-grid { grid-template-columns:1fr; }
+      .toolbar { grid-template-columns:1fr; }
+      h1 { font-size:42px; }
+    }
+  </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="container nav">
-    <a class="logo" href="../index.html">Nehemiah Reconstruction Supply Chain</a>
-    <nav class="nav-links">
-      <a href="../index.html#values">Values</a>
-      <a href="../index.html#engineering-practice">Engineering Practice</a>
-      <a href="../index.html#featured-services">Featured Services</a>
-      <a href="../index.html#client-focus">Client Focus</a>
-      <a href="../internal-data-room.html">Restricted Data Room</a>
-      <a href="../index.html#contact">Contact</a>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="../">Nehemiah Reconstruction Supply Chain</a>
+      <div class="navlinks">
+        <a href="../#values">Values</a>
+        <a href="../#engineering-practice">Engineering Practice</a>
+        <a href="../#featured-services">Featured Services</a>
+        <a href="../#client-focus">Client Focus</a>
+        <a href="../internal-data-room.html">Restricted Data Room</a>
+        <a href="../#contact">Contact</a>
+      </div>
     </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="kicker">Featured Services · Data Center Professionalism</div>
+      <h1>Data Center Technical Route, Equipment Selection and Acceptance Database</h1>
+      <p class="lead">
+        A curated public professional interface for data center decision logic. It does not publish raw drawings,
+        prices, full PLC programs, complete I/O lists, supplier documents, or client-sensitive records. Public records
+        show technical reasoning, risk controls, and acceptance evidence; the complete 491-item internal matrix belongs
+        in the restricted data room.
+      </p>
+      <div class="chips">
+        <span class="chip">Technical route</span>
+        <span class="chip">Equipment selection</span>
+        <span class="chip">Engineering decision logic</span>
+        <span class="chip">Risk if misapplied</span>
+        <span class="chip">Acceptance evidence</span>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="publicCount">72</b><span>curated public records</span></div>
+        <div class="stat"><b id="systemCount">12</b><span>professional system groups</span></div>
+        <div class="stat"><b>491</b><span>internal matrix entries kept restricted</span></div>
+        <div class="stat"><b>125</b><span>restricted evidence packages</span></div>
+      </div>
+      <p class="note">
+        Public content is intentionally selective. It demonstrates professional method without exposing confidential
+        engineering files. Each row should be read as a decision-control record: requirement → recommended solution →
+        engineering logic → risk → evidence.
+      </p>
+    </section>
+
+    <section id="system-groups">
+      <div class="section-head">
+        <div>
+          <h2>System Groups</h2>
+          <p class="subtle">Click a system group to filter the public professional records.</p>
+        </div>
+        <a class="button" href="../internal-data-room.html">Request restricted access →</a>
+      </div>
+      <div id="groupGrid" class="group-grid"></div>
+    </section>
+
+    <section id="database">
+      <div class="section-head">
+        <div>
+          <h2>Professional Decision Interface</h2>
+          <p class="subtle">Curated records only. Click any row to see calculation inputs and acceptance logic.</p>
+        </div>
+        <strong id="shownCount">72 records shown</strong>
+      </div>
+      <div class="toolbar">
+        <input id="searchInput" type="search" placeholder="Search generator, chiller, PLC, valve, UPS, evidence..." />
+        <select id="systemFilter"><option value="">All system groups</option></select>
+        <select id="packageFilter"><option value="">All restricted packages</option></select>
+        <select id="accessFilter">
+          <option value="">All access levels</option>
+          <option>Public Technical Summary</option>
+          <option>Public Summary + Restricted Evidence</option>
+        </select>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID / Access</th>
+              <th>System</th>
+              <th>Equipment / Route</th>
+              <th>Functional Requirement</th>
+              <th>Recommended Solution</th>
+              <th>Engineering Decision Logic</th>
+              <th>Risk if Misapplied</th>
+              <th>Acceptance Evidence</th>
+            </tr>
+          </thead>
+          <tbody id="recordBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Restricted Data Boundary</h2>
+      <p class="note">
+        The public interface does not disclose raw project drawings, full point lists, pricing, supplier bottom prices,
+        detailed PLC source code, complete commissioning scripts, client-sensitive records, or contract documents.
+        Authorized partners may request access to selected evidence packages after review.
+      </p>
+    </section>
+  </main>
+
+  <div id="detail" class="detail" aria-hidden="true">
+    <div class="panel">
+      <div class="panel-head">
+        <div>
+          <span id="detailId" class="badge"></span>
+          <h3 id="detailTitle"></h3>
+          <p id="detailSystem" class="subtle"></p>
+        </div>
+        <button class="close" onclick="closeDetail()" aria-label="Close">×</button>
+      </div>
+      <div class="panel-body">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Functional Requirement</h4><p id="dFunc"></p></div>
+          <div class="detail-box"><h4>Recommended Solution</h4><p id="dSolution"></p></div>
+          <div class="detail-box"><h4>Engineering Decision Logic</h4><p id="dLogic"></p></div>
+          <div class="detail-box"><h4>Why Alternatives Are Rejected</h4><p id="dAlt"></p></div>
+          <div class="detail-box"><h4>Calculation / Verification Inputs</h4><p id="dCalc"></p></div>
+          <div class="detail-box"><h4>Risk if Misapplied</h4><p id="dRisk"></p></div>
+          <div class="detail-box"><h4>Control Measures</h4><p id="dControl"></p></div>
+          <div class="detail-box"><h4>Acceptance Evidence</h4><p id="dEvidence"></p></div>
+        </div>
+        <div class="access">
+          <strong>Restricted evidence package:</strong> <span id="dPackage"></span><br />
+          Raw drawings, complete calculations, full I/O list, PLC source code, supplier offers, pricing, and contract records require authorized access.
+          <br /><a class="button" href="../internal-data-room.html">Request access →</a>
+        </div>
+      </div>
+    </div>
   </div>
-</header>
 
-<main>
-<section class="hero">
-  <div class="container">
-    <div class="kicker">Featured Services · Data Center Professionalism</div>
-    <h1>Data Center Technical Route, Equipment Selection and Acceptance Database</h1>
-    <p class="lead">
-      This page is a public-summary interface for a desensitized data center decision database.
-      It organizes technical route, equipment selection, PLC cooling control, calculation entry,
-      risk measures, acceptance evidence, operation handover, and restricted data access.
-    </p>
-    <div class="badges">
-      <span class="badge">Technical route</span>
-      <span class="badge">Equipment selection</span>
-      <span class="badge">PLC cooling control</span>
-      <span class="badge">Risk · measure · evidence</span>
-      <span class="badge">Public summary + request access</span>
-    </div>
-    <div class="stats">
-      <div class="stat"><b id="countRecords">—</b><span>master records</span></div>
-      <div class="stat"><b id="countSystems">—</b><span>system groups</span></div>
-      <div class="stat"><b id="countPackages">—</b><span>restricted packages</span></div>
-      <div class="stat"><b id="countCalc">—</b><span>calculation-entry records</span></div>
-    </div>
-    <p class="note">
-      Public pages show only desensitized summaries and decision logic. Original drawings, raw
-      project files, complete PLC programs, full I/O lists, prices, supplier details, client-sensitive
-      records, and contract documents are not published here.
-    </p>
-  </div>
-</section>
+  <footer class="container footer">
+    <p>© Nehemiah Reconstruction Supply Chain · Public professional summary page · Confidential records remain restricted.</p>
+  </footer>
 
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <h2>System Groups</h2>
-      <a class="button secondary" href="../internal-data-room.html">Request restricted access →</a>
-    </div>
-    <div class="card-grid" id="systemCards"></div>
-  </div>
-</section>
+  <script>
+    const records = [
+  {
+    "id": "DC-V7-0001",
+    "system": "Overall Technical Route",
+    "systemCode": "DC-00",
+    "item": "Productized Data Center Architecture",
+    "functionalRequirement": "Create a repeatable architecture that can be adapted to site capacity, climate, utility conditions, and client resilience targets.",
+    "recommendedSolution": "Use a standardized but adjustable design kit: modular electrical rooms, defined cooling plant options, standard control point lists, acceptance checklists, and restricted evidence packages.",
+    "engineeringDecisionLogic": "A productized route reduces design ambiguity, shortens procurement review, and makes acceptance evidence comparable across projects. It is still project-specific because load density, local code, utility quality, water availability, and owner risk appetite must be checked before final selection.",
+    "whyAlternativesRejected": "A one-off design may suit a special building but is harder to price, inspect, reproduce, and hand over. A copied design without local verification may miss utility, climate, fire, or permit conditions.",
+    "calculationInputs": "IT load forecast; rack density; PUE target; utility capacity; climate data; water availability; resilience target; phased expansion plan.",
+    "riskIfMisapplied": "Copied architecture can create insufficient capacity, stranded equipment, maintenance conflict, or non-compliant interfaces.",
+    "controlMeasures": "Use gate reviews at concept, schematic design, procurement, commissioning, and handover; freeze principles early and equipment after calculation checks.",
+    "acceptanceEvidence": "Design basis report, one-line diagrams, cooling concept report, commissioning plan, owner requirement matrix, and exception log.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-00 Overall Technical Route evidence package"
+  },
+  {
+    "id": "DC-V7-0002",
+    "system": "Overall Technical Route",
+    "systemCode": "DC-00",
+    "item": "N+1 Emergency Power Route",
+    "functionalRequirement": "Provide emergency generation capacity with maintainability and one-unit failure tolerance without overbuilding a full 2N emergency system.",
+    "recommendedSolution": "Use N+1 generator sets sized by block load, motor-starting sequence, UPS recharge demand, ambient derating, fuel autonomy, and step-load performance.",
+    "engineeringDecisionLogic": "N+1 is selected when one generator can be out for maintenance or fault while remaining units support the calculated critical emergency load. The configuration must be proven by load sequence, paralleling logic, voltage/frequency recovery, and fuel system autonomy.",
+    "whyAlternativesRejected": "A single large generator creates a maintenance and fault single point. Full 2N generation may be excessive where the owner does not require path-separated emergency generation.",
+    "calculationInputs": "Critical block load; UPS recharge current; motor starting kVA; ambient derating; step-load acceptance; synchronization time; fuel autonomy.",
+    "riskIfMisapplied": "Undersizing causes voltage dip, failed pump start, UPS recharge conflict, and unstable frequency; oversizing causes wet stacking and poor low-load operation.",
+    "controlMeasures": "Apply priority loading, load shedding, generator paralleling logic, fuel polishing, and periodic load-bank testing.",
+    "acceptanceEvidence": "Generator sizing sheet, factory test, site load-bank test, paralleling test, black-start test, and fuel volume certificate.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-00 Overall Technical Route evidence package"
+  },
+  {
+    "id": "DC-V7-0003",
+    "system": "Overall Technical Route",
+    "systemCode": "DC-00",
+    "item": "2N Critical Power Route",
+    "functionalRequirement": "Provide independent A/B power paths where business interruption cost or SLA requires high fault tolerance.",
+    "recommendedSolution": "Use separated A and B paths from upstream switchgear through UPS/HVDC, distribution, rack PDUs, monitoring, and maintenance procedures.",
+    "engineeringDecisionLogic": "2N is selected only when both paths are truly independent and maintainable. Shared cooling, shared control power, common cable routes, or common fire compartments can destroy the claimed resilience.",
+    "whyAlternativesRejected": "N+1 is less expensive but does not provide path independence. A fake 2N route is rejected because it creates confidence without real fault isolation.",
+    "calculationInputs": "Critical IT load; A/B rack distribution; route diversity; UPS autonomy; bypass plan; compartment separation; cable routing.",
+    "riskIfMisapplied": "Hidden common points can turn a branch failure into full-room outage.",
+    "controlMeasures": "Separate labels, route diversity, independent metering, lockout procedures, and integrated failover testing.",
+    "acceptanceEvidence": "A/B one-line diagrams, route drawings, breaker coordination study, maintenance procedure test, and rack-level audit.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-00 Overall Technical Route evidence package"
+  },
+  {
+    "id": "DC-V7-0004",
+    "system": "Overall Technical Route",
+    "systemCode": "DC-00",
+    "item": "Integrated Commissioning Route",
+    "functionalRequirement": "Verify that power, cooling, controls, fire, network, and operations behave as one system under failure and maintenance modes.",
+    "recommendedSolution": "Plan level-based commissioning: component test, subsystem test, system test, integrated systems test, load simulation, black-start test, and operator response test.",
+    "engineeringDecisionLogic": "Integrated commissioning is selected because equipment pass tests do not prove facility resilience. The test must simulate utility loss, generator start, UPS transfer, pump failure, valve failure, sensor fault, and alarm escalation.",
+    "whyAlternativesRejected": "Separate vendor tests are rejected because interface failures remain hidden. Low-load-only testing is rejected because final operation depends on step-load and thermal stability.",
+    "calculationInputs": "Test levels; temporary load banks; thermal simulation; failure scenarios; alarm paths; operator scripts; stop criteria.",
+    "riskIfMisapplied": "Interface faults may remain hidden until the first outage.",
+    "controlMeasures": "Use witnessed scripts, prerequisites, hold points, rollback criteria, trend logging, and retest requirements.",
+    "acceptanceEvidence": "Commissioning plan, test scripts, trend logs, witness signatures, deficiency closure, and integrated systems report.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-00 Overall Technical Route evidence package"
+  },
+  {
+    "id": "DC-V7-0005",
+    "system": "Overall Technical Route",
+    "systemCode": "DC-00",
+    "item": "Acceptance Evidence Route",
+    "functionalRequirement": "Make every technical decision traceable from requirement to calculation, procurement, installation, commissioning, and handover.",
+    "recommendedSolution": "Use an evidence matrix linking each system record to design inputs, calculation sheets, equipment submittals, inspection records, and functional tests.",
+    "engineeringDecisionLogic": "Reliability depends on verifiable execution, not design intent alone. Evidence must show what was selected, why it was selected, how it was installed, and how it was proven.",
+    "whyAlternativesRejected": "A simple photo archive is insufficient because it does not prove performance or compliance. A traditional handover pack is weak if it cannot link decisions to tests.",
+    "calculationInputs": "Owner requirements; design basis; calculations; submittals; inspection test plans; commissioning scripts; deficiency list; O&M manuals.",
+    "riskIfMisapplied": "Missing evidence causes payment disputes, warranty uncertainty, unsafe operation, and inability to prove readiness.",
+    "controlMeasures": "Maintain an evidence register, naming rules, revision control, sign-off gates, and restricted access levels.",
+    "acceptanceEvidence": "Evidence matrix, signed inspection forms, commissioning reports, punch-list closure, training records, as-built drawings, and handover index.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-00 Overall Technical Route evidence package"
+  },
+  {
+    "id": "DC-V7-0006",
+    "system": "Overall Technical Route",
+    "systemCode": "DC-00",
+    "item": "Restricted Public/Private Data Boundary",
+    "functionalRequirement": "Demonstrate capability publicly while protecting drawings, PLC code, prices, supplier details, and client-sensitive records.",
+    "recommendedSolution": "Publish curated decision records and place raw project files, complete calculations, point lists, PLC programs, vendor offers, and contract documents in a restricted data room.",
+    "engineeringDecisionLogic": "Public credibility needs technical reasoning, but client trust requires confidentiality. The public page should show method; restricted access holds source documents after review.",
+    "whyAlternativesRejected": "Publishing all records exposes security, pricing, and client data. Publishing slogans only fails to prove engineering capability.",
+    "calculationInputs": "Document sensitivity; client permission; NDA status; supplier confidentiality; sanctions screening; access purpose; revocation procedure.",
+    "riskIfMisapplied": "Over-disclosure creates commercial and security risk; under-disclosure looks unsupported.",
+    "controlMeasures": "Classify records by access level, redact personal data, watermark documents, require access request, and maintain an access log.",
+    "acceptanceEvidence": "Public summary page, access request workflow, restricted manifest, NDA log, watermark policy, and redaction checklist.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-00 Overall Technical Route evidence package"
+  },
+  {
+    "id": "DC-V7-0007",
+    "system": "Medium and Low Voltage Power",
+    "systemCode": "DC-01",
+    "item": "Dual Utility Feed Assessment",
+    "functionalRequirement": "Determine whether two utility incomers provide real resilience or only nominal duplication from the same upstream weakness.",
+    "recommendedSolution": "Use dual incomers only after confirming upstream source diversity, route diversity, protection coordination, metering, utility switching rules, and failure history.",
+    "engineeringDecisionLogic": "Dual utility feeds are selected only when they reduce actual outage exposure. The upstream substation, feeder corridor, breaker ownership, and utility restoration practice must be checked before taking resilience credit.",
+    "whyAlternativesRejected": "A second feeder from the same source may be cosmetic redundancy. Generator-only fallback may be rejected where fuel logistics or prolonged instability cannot be supported.",
+    "calculationInputs": "Feeder source; cable route; substation; historical outage; protection settings; transfer agreement; capacity contract; metering boundary.",
+    "riskIfMisapplied": "False redundancy can cause both feeds to fail together or prevent transfer during a utility event.",
+    "controlMeasures": "Obtain utility confirmation, route survey, protection study, source diagram, and switching procedure.",
+    "acceptanceEvidence": "Utility service agreement, feeder route evidence, protection coordination report, metering record, and transfer test.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-01 Medium and Low Voltage Power evidence package"
+  },
+  {
+    "id": "DC-V7-0008",
+    "system": "Medium and Low Voltage Power",
+    "systemCode": "DC-01",
+    "item": "MV Switchgear and RMU Selection",
+    "functionalRequirement": "Provide safe medium-voltage isolation, sectionalizing, and maintainable transformer supply.",
+    "recommendedSolution": "Use MV switchgear or RMU selected by fault level, switching duty, protection philosophy, arc containment, and maintenance access.",
+    "engineeringDecisionLogic": "The MV arrangement must match fault current, transformer capacity, operator competence, and safety requirement. Arc classification and interlocking matter more than panel count.",
+    "whyAlternativesRejected": "A low-cost RMU is rejected where protection, metering, or sectionalizing duty exceeds capability. Overspecified switchgear is rejected where space and procedures cannot support it.",
+    "calculationInputs": "Fault level; rated current; breaking capacity; relay scheme; CT/VT ratio; arc classification; cable termination; earthing switch.",
+    "riskIfMisapplied": "Wrong switchgear can create unsafe switching, nuisance trips, or inability to isolate a transformer.",
+    "controlMeasures": "Use protection study, interlock review, switching procedure, infrared inspection, and access verification.",
+    "acceptanceEvidence": "Type test certificate, relay test report, cable test, interlock test, commissioning record, and switching training record.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-01 Medium and Low Voltage Power evidence package"
+  },
+  {
+    "id": "DC-V7-0009",
+    "system": "Medium and Low Voltage Power",
+    "systemCode": "DC-01",
+    "item": "Transformer Capacity and Impedance",
+    "functionalRequirement": "Step down MV supply while maintaining capacity, fault-level control, efficiency, and maintainability.",
+    "recommendedSolution": "Select transformer capacity by critical load, diversity, redundancy mode, future expansion, impedance, losses, noise, and fire separation.",
+    "engineeringDecisionLogic": "Transformer selection must balance capacity and fault current. Higher capacity without impedance review may exceed LV short-circuit ratings; too little capacity leaves no maintenance or expansion margin.",
+    "whyAlternativesRejected": "Undersized transformers limit IT growth and create thermal stress. Oversized units may create high fault current, poor low-load efficiency, space pressure, and unnecessary cost.",
+    "calculationInputs": "Load schedule; redundancy mode; future phase; impedance; no-load/load losses; temperature rise; sound level; fire rating; ventilation.",
+    "riskIfMisapplied": "Improper selection causes overheating, high fault current, poor efficiency, or inability to maintain one unit out of service.",
+    "controlMeasures": "Use load forecast, loss evaluation, short-circuit calculation, ventilation calculation, and maintenance isolation plan.",
+    "acceptanceEvidence": "Transformer test report, nameplate, short-circuit study, thermal scan, inspection record, and energization record.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-01 Medium and Low Voltage Power evidence package"
+  },
+  {
+    "id": "DC-V7-0010",
+    "system": "Medium and Low Voltage Power",
+    "systemCode": "DC-01",
+    "item": "LV Main Switchgear Architecture",
+    "functionalRequirement": "Distribute power safely to UPS, mechanical plant, life safety, and auxiliary loads with maintainability.",
+    "recommendedSolution": "Use LV switchgear arranged by functional zones, selective coordination, busbar capacity, compartmentalization, metering, and future extension.",
+    "engineeringDecisionLogic": "LV architecture is selected around isolation boundaries, not amperage alone. Maintenance, fault isolation, thermal inspection, and safe expansion must be possible without shutting down critical loads.",
+    "whyAlternativesRejected": "A single large switchboard is rejected where it creates a maintenance bottleneck. Excessive segmentation is rejected where it complicates coordination.",
+    "calculationInputs": "Main current; busbar rating; short-circuit withstand; breaker selectivity; compartment form; metering; maintenance bypass; spare ways.",
+    "riskIfMisapplied": "Poor architecture can make a small fault trip a large area or prevent safe maintenance.",
+    "controlMeasures": "Use selective coordination study, load zoning, breaker labeling, thermography route planning, and access clearance checks.",
+    "acceptanceEvidence": "Switchgear factory test, breaker setting report, busbar inspection, insulation resistance test, torque records, and as-built one-line.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-01 Medium and Low Voltage Power evidence package"
+  },
+  {
+    "id": "DC-V7-0011",
+    "system": "Medium and Low Voltage Power",
+    "systemCode": "DC-01",
+    "item": "ATS and STS Application Boundary",
+    "functionalRequirement": "Transfer loads between sources without unsafe interruption or unintended paralleling.",
+    "recommendedSolution": "Use ATS for mechanical and auxiliary loads that tolerate transfer time; use STS only where static transfer speed and source synchronization are required.",
+    "engineeringDecisionLogic": "ATS and STS are selected by load tolerance, source quality, transfer time, and bypass philosophy. Mechanical loads often need restart logic; IT power usually requires UPS-backed distribution before downstream transfer decisions.",
+    "whyAlternativesRejected": "Using STS for every load is unnecessarily costly and complex. Using ATS for sensitive IT branches is rejected when transfer transient is unacceptable.",
+    "calculationInputs": "Load type; allowable transfer time; source synchronization; fault current; bypass path; control power; restart sequence.",
+    "riskIfMisapplied": "Wrong transfer device can cause nuisance switching, motor damage, source conflict, or IT interruption.",
+    "controlMeasures": "Define transfer matrix, source health logic, bypass procedure, and periodic transfer test.",
+    "acceptanceEvidence": "ATS/STS test report, timing record, source failure simulation, bypass test, and load restoration record.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-01 Medium and Low Voltage Power evidence package"
+  },
+  {
+    "id": "DC-V7-0012",
+    "system": "Medium and Low Voltage Power",
+    "systemCode": "DC-01",
+    "item": "Breaker Selective Coordination",
+    "functionalRequirement": "Ensure a downstream fault is cleared locally without unnecessarily tripping upstream critical supply.",
+    "recommendedSolution": "Set breakers and relays through a time-current coordination study for utility, transformer, UPS input/output, mechanical, and life-safety distribution.",
+    "engineeringDecisionLogic": "Selective coordination is a design control because capacity alone does not define reliability. Trip curves must coordinate under normal, emergency, bypass, and maintenance modes.",
+    "whyAlternativesRejected": "Default factory settings are rejected because they may not fit project fault levels. Overly slow upstream settings are rejected if they compromise protection.",
+    "calculationInputs": "Fault current; breaker trip unit; cable length; transformer impedance; UPS contribution; generator fault current; code requirement.",
+    "riskIfMisapplied": "Bad settings can turn a branch fault into a full-room outage or leave equipment inadequately protected.",
+    "controlMeasures": "Use a coordination study, setting schedule, sealed settings, and retest after major changes.",
+    "acceptanceEvidence": "Coordination report, breaker setting sheets, relay injection test, labels, and commissioning sign-off.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-01 Medium and Low Voltage Power evidence package"
+  },
+  {
+    "id": "DC-V7-0013",
+    "system": "UPS, HVDC and Battery System",
+    "systemCode": "DC-04",
+    "item": "UPS Topology Selection",
+    "functionalRequirement": "Provide ride-through and power conditioning for critical IT and control loads.",
+    "recommendedSolution": "Use modular online double-conversion UPS or HVDC route according to load type, maintainability, efficiency, fault isolation, and service maturity.",
+    "engineeringDecisionLogic": "UPS topology must match the operating model. Double-conversion supports stable conditioned power; modular architecture supports incremental capacity and maintenance isolation.",
+    "whyAlternativesRejected": "Line-interactive backup UPS is rejected for critical halls. Custom or uncommon UPS is rejected where service network and spare parts cannot be assured.",
+    "calculationInputs": "IT critical load; autonomy; efficiency curve; bypass design; short-circuit contribution; modular block size; service response; spare policy.",
+    "riskIfMisapplied": "Wrong topology creates bypass dependency, inefficient low-load operation, or maintenance exposure.",
+    "controlMeasures": "Define UPS block plan, bypass procedure, firmware control, module spare strategy, and transfer test.",
+    "acceptanceEvidence": "UPS factory report, load test, bypass test, battery discharge test, alarm test, and maintenance record.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-04 UPS, HVDC and Battery System evidence package"
+  },
+  {
+    "id": "DC-V7-0014",
+    "system": "UPS, HVDC and Battery System",
+    "systemCode": "DC-04",
+    "item": "HVDC Distribution Boundary",
+    "functionalRequirement": "Support efficient DC distribution where server ecosystem, maintenance capability, and owner standard permit it.",
+    "recommendedSolution": "Use HVDC only when load compatibility, safety procedure, fault protection, connector standard, and training are confirmed.",
+    "engineeringDecisionLogic": "HVDC can reduce conversion stages, but it is not universal. It is selected only when equipment ecosystem and safety management are mature.",
+    "whyAlternativesRejected": "HVDC is rejected where IT equipment, staff training, or protection devices are not compatible. Traditional AC UPS is preferred where interoperability is more important.",
+    "calculationInputs": "Server input standard; DC voltage; breaker/fuse coordination; arc risk; maintenance tooling; training; spare parts.",
+    "riskIfMisapplied": "Misapplied HVDC may create safety hazards, warranty conflicts, and difficult fault isolation.",
+    "controlMeasures": "Use DC safety rules, labeling, isolation procedures, compatible PDUs, and fault protection testing.",
+    "acceptanceEvidence": "Compatibility letter, DC protection test, training record, labeling inspection, and commissioning test.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-04 UPS, HVDC and Battery System evidence package"
+  },
+  {
+    "id": "DC-V7-0015",
+    "system": "UPS, HVDC and Battery System",
+    "systemCode": "DC-04",
+    "item": "Battery Autonomy Duration",
+    "functionalRequirement": "Maintain critical load during generator start, transfer instability, or controlled shutdown.",
+    "recommendedSolution": "Select autonomy by generator start sequence, utility stability, shutdown strategy, UPS recharge current, and incident response time.",
+    "engineeringDecisionLogic": "Battery autonomy is selected by scenario, not habit. Short autonomy may be enough with reliable generators; longer autonomy is required where fuel, generator start, or utility restoration is uncertain.",
+    "whyAlternativesRejected": "Blindly choosing 5 or 15 minutes is rejected. Excessive autonomy is rejected when space, fire load, and cost become disproportionate.",
+    "calculationInputs": "Critical load; generator start time; load factor; battery aging; ambient temperature; recharge time; EPO policy.",
+    "riskIfMisapplied": "Insufficient autonomy causes uncontrolled load loss; excessive autonomy increases fire load, weight, and maintenance complexity.",
+    "controlMeasures": "Use autonomy calculation, discharge testing, battery health monitoring, and replacement thresholds.",
+    "acceptanceEvidence": "Battery sizing sheet, discharge test, monitoring trend, thermal inspection, and replacement record.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-04 UPS, HVDC and Battery System evidence package"
+  },
+  {
+    "id": "DC-V7-0016",
+    "system": "UPS, HVDC and Battery System",
+    "systemCode": "DC-04",
+    "item": "Lithium Battery Application",
+    "functionalRequirement": "Reduce footprint and improve monitoring where fire safety, BMS reliability, and code compliance are acceptable.",
+    "recommendedSolution": "Use lithium batteries only with integrated BMS, thermal monitoring, fire strategy, qualified enclosure, emergency procedure, and manufacturer support.",
+    "engineeringDecisionLogic": "Lithium is selected where space and monitoring benefits outweigh added fire and regulatory controls. It must be supported by BMS data, clear isolation, and authority acceptance.",
+    "whyAlternativesRejected": "VRLA remains acceptable where lithium approval, training, or support is weak. Lithium is rejected where thermal event management cannot be demonstrated.",
+    "calculationInputs": "Battery chemistry; BMS data; thermal runaway control; detection; suppression method; ventilation; approval; recycling path.",
+    "riskIfMisapplied": "Improper lithium use can create thermal event, insurance, and approval risk.",
+    "controlMeasures": "Use BMS alarms, thermal sensors, isolation, fire procedure, and periodic firmware/data review.",
+    "acceptanceEvidence": "UL/IEC certificate, BMS trend, thermal test, fire review, authority approval, and maintenance record.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-04 UPS, HVDC and Battery System evidence package"
+  },
+  {
+    "id": "DC-V7-0017",
+    "system": "UPS, HVDC and Battery System",
+    "systemCode": "DC-04",
+    "item": "Modular UPS Block Size",
+    "functionalRequirement": "Allow phased capacity growth while maintaining serviceability and redundancy.",
+    "recommendedSolution": "Select module size by load increment, redundancy target, cabinet rating, service method, and bypass capacity.",
+    "engineeringDecisionLogic": "Module size must allow growth without operating too many modules at poor efficiency or making one module too large to replace quickly.",
+    "whyAlternativesRejected": "Too-small modules create complexity and many failure points. Too-large modules reduce redundancy granularity and service convenience.",
+    "calculationInputs": "Initial load; future phase; module rating; N+1 margin; efficiency curve; cabinet limit; spare availability.",
+    "riskIfMisapplied": "Bad module sizing creates stranded capacity, low efficiency, or slow replacement.",
+    "controlMeasures": "Use phased capacity schedule, module loading policy, spare module plan, and load trend review.",
+    "acceptanceEvidence": "Capacity schedule, UPS module report, efficiency trend, spare record, and maintenance test.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-04 UPS, HVDC and Battery System evidence package"
+  },
+  {
+    "id": "DC-V7-0018",
+    "system": "UPS, HVDC and Battery System",
+    "systemCode": "DC-04",
+    "item": "Maintenance Bypass Architecture",
+    "functionalRequirement": "Allow UPS maintenance without interrupting critical loads or creating unsafe backfeed.",
+    "recommendedSolution": "Use internal and external maintenance bypass with interlocks, labeled sequence, and clear source status indication.",
+    "engineeringDecisionLogic": "Bypass design is selected for maintainability. It must prevent accidental paralleling of incompatible sources or bypassing protection during live maintenance.",
+    "whyAlternativesRejected": "No-bypass arrangement is rejected for critical operation. Overly complex bypass is rejected if staff cannot safely execute it.",
+    "calculationInputs": "Bypass rating; interlock logic; source sync; breaker sequence; signage; training; fault level during bypass.",
+    "riskIfMisapplied": "Wrong bypass causes accidental interruption, backfeed, or unprotected operation.",
+    "controlMeasures": "Use written switching procedure, key interlocks, status lamps, training, and periodic bypass test.",
+    "acceptanceEvidence": "Bypass test record, procedure sign-off, interlock test, operator training record, and incident drill.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-04 UPS, HVDC and Battery System evidence package"
+  },
+  {
+    "id": "DC-V7-0019",
+    "system": "Generator and Fuel System",
+    "systemCode": "DC-07",
+    "item": "Generator Rating and Derating",
+    "functionalRequirement": "Deliver emergency power at site ambient condition and altitude without hidden capacity shortfall.",
+    "recommendedSolution": "Size generator sets by standby/prime rating, ambient derating, altitude, step load, harmonic load, and future block load.",
+    "engineeringDecisionLogic": "Generator capacity is selected from actual operating envelope, not nameplate alone. Ambient heat, altitude, alternator capability, UPS recharge, and motor-starting must be included.",
+    "whyAlternativesRejected": "Nameplate-only selection ignores derating. Oversizing without low-load strategy creates wet stacking and poor performance.",
+    "calculationInputs": "Ambient temperature; altitude; fuel; block load; motor starting; UPS recharge; step load; harmonic content; reserve.",
+    "riskIfMisapplied": "Underrating causes failed starts and unstable voltage; oversizing causes inefficient operation and maintenance issues.",
+    "controlMeasures": "Use derating sheet, load sequence, load-bank schedule, and minimum-load management.",
+    "acceptanceEvidence": "Generator sizing report, factory test, site load-bank test, fuel system test, and event logs.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-07 Generator and Fuel System evidence package"
+  },
+  {
+    "id": "DC-V7-0020",
+    "system": "Generator and Fuel System",
+    "systemCode": "DC-07",
+    "item": "Paralleling Control",
+    "functionalRequirement": "Synchronize multiple sets and share load safely during black-start and utility failure.",
+    "recommendedSolution": "Use paralleling controller with load sharing, priority start, dead-bus closing, reverse power protection, and alarm integration.",
+    "engineeringDecisionLogic": "Paralleling is selected where multiple generators are required for N+1 or phased load. The controller must handle starting order, load acceptance, fault isolation, and utility return.",
+    "whyAlternativesRejected": "Manual paralleling is rejected for critical sequences. Simple ATS-only scheme is rejected where multiple generators must share load.",
+    "calculationInputs": "Number of sets; busbar rating; sync method; load share; fault protection; start sequence; control power.",
+    "riskIfMisapplied": "Bad logic causes failed synchronization, reverse power, bus instability, or delayed restoration.",
+    "controlMeasures": "Use witnessed functional test, dead-bus test, load-share test, and failure simulation.",
+    "acceptanceEvidence": "Controller configuration, protection test, paralleling report, event log, and operator procedure.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-07 Generator and Fuel System evidence package"
+  },
+  {
+    "id": "DC-V7-0021",
+    "system": "Generator and Fuel System",
+    "systemCode": "DC-07",
+    "item": "Fuel Day Tank Design",
+    "functionalRequirement": "Supply generators during operation while preventing overflow, contamination, and pump failure.",
+    "recommendedSolution": "Use day tanks sized for controlled runtime with redundant pumps, level alarms, leak detection, overflow return, and manual isolation.",
+    "engineeringDecisionLogic": "Day tank design is selected by consumption rate, pump duty, elevation, fire separation, and maintenance access. It is not a simple storage container.",
+    "whyAlternativesRejected": "Direct suction from bulk tank is rejected where reliability or distance is inadequate. Oversized day tanks may increase fire load and code restrictions.",
+    "calculationInputs": "Fuel consumption; runtime target; pump rate; tank elevation; containment; level switches; return line; polishing.",
+    "riskIfMisapplied": "Poor day tank design causes air entrainment, overflow, starvation, or spill.",
+    "controlMeasures": "Use level interlocks, leak alarms, dual pumps, spill containment, and fuel quality checks.",
+    "acceptanceEvidence": "Tank certificate, pump test, level alarm test, leak sensor test, fuel quality report, and operation log.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-07 Generator and Fuel System evidence package"
+  },
+  {
+    "id": "DC-V7-0022",
+    "system": "Generator and Fuel System",
+    "systemCode": "DC-07",
+    "item": "Bulk Fuel Autonomy",
+    "functionalRequirement": "Maintain emergency operation for a defined period under realistic load and refueling constraints.",
+    "recommendedSolution": "Select bulk tank capacity from critical load, fuel curve, refueling lead time, site security, weather access, and permit limits.",
+    "engineeringDecisionLogic": "Fuel autonomy is selected by incident scenario. It must consider real load, refueling logistics, fuel degradation, and regulatory limits.",
+    "whyAlternativesRejected": "Minimal fuel storage is rejected where road access or supply chain is uncertain. Excessive storage is rejected where spill, aging, or permit risk grows.",
+    "calculationInputs": "Fuel curve; load factor; autonomy hours; refueling contract; delivery access; containment; fuel age; permit limit.",
+    "riskIfMisapplied": "Wrong storage planning creates runtime failure, contamination, spill liability, or permit violation.",
+    "controlMeasures": "Use fuel management plan, polishing, supplier agreement, periodic inventory, and spill response procedure.",
+    "acceptanceEvidence": "Tank permit, fuel calculation, supplier agreement, fuel test, spill kit inspection, and inventory log.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-07 Generator and Fuel System evidence package"
+  },
+  {
+    "id": "DC-V7-0023",
+    "system": "Generator and Fuel System",
+    "systemCode": "DC-07",
+    "item": "Exhaust and Acoustic Control",
+    "functionalRequirement": "Discharge exhaust safely while meeting noise, heat, and back-pressure limits.",
+    "recommendedSolution": "Design exhaust route, silencer, expansion joint, insulation, discharge height, and acoustic treatment by manufacturer and local limits.",
+    "engineeringDecisionLogic": "Exhaust design protects engine performance and surroundings. Back-pressure, heat radiation, condensate, and noise are reliability issues, not only environmental issues.",
+    "whyAlternativesRejected": "Improvised exhaust routing is rejected because it can reduce engine output. Oversized acoustic treatment is rejected if it creates excessive back-pressure.",
+    "calculationInputs": "Back-pressure; exhaust temperature; pipe length; silencer; discharge location; noise limit; thermal clearance; condensate drain.",
+    "riskIfMisapplied": "Bad exhaust causes power derating, fire risk, complaints, and engine damage.",
+    "controlMeasures": "Use back-pressure calculation, acoustic prediction, insulation inspection, and hot test.",
+    "acceptanceEvidence": "Exhaust calculation, silencer data, acoustic test, thermal inspection, and full-load test.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-07 Generator and Fuel System evidence package"
+  },
+  {
+    "id": "DC-V7-0024",
+    "system": "Generator and Fuel System",
+    "systemCode": "DC-07",
+    "item": "Load Bank Test Interface",
+    "functionalRequirement": "Prove generator performance without risking live IT load during routine test.",
+    "recommendedSolution": "Provide load-bank connection with safe switching, heat discharge, cable route, and test procedure.",
+    "engineeringDecisionLogic": "Load-bank interface is selected because no-load running does not prove readiness. Periodic load testing prevents wet stacking and validates voltage/frequency recovery.",
+    "whyAlternativesRejected": "Unloaded running is rejected as insufficient. Temporary load connection without designed switchgear and safety method is rejected.",
+    "calculationInputs": "Load-bank capacity; connection point; cable rating; heat discharge; switching sequence; duration; emissions limit.",
+    "riskIfMisapplied": "Without load testing, hidden generator weakness appears only during outage.",
+    "controlMeasures": "Use test schedule, safe connection procedure, thermal watch, and fuel monitoring.",
+    "acceptanceEvidence": "Load-bank report, voltage/frequency trend, thermal inspection, fuel log, and maintenance action record.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-07 Generator and Fuel System evidence package"
+  },
+  {
+    "id": "DC-V7-0025",
+    "system": "HVAC Chilled-Water and Heat-Rejection System",
+    "systemCode": "DC-06",
+    "item": "Chiller Capacity Selection",
+    "functionalRequirement": "Meet peak and maintainable cooling demand without unstable low-load operation.",
+    "recommendedSolution": "Select chiller capacity from IT load, diversity, redundancy, minimum load ratio, ambient condition, and future expansion.",
+    "engineeringDecisionLogic": "Chiller sizing balances peak resilience and part-load stability. The design must remain stable during low IT load, high ambient, and one-unit maintenance.",
+    "whyAlternativesRejected": "A single oversized chiller cycles at low load. Undersized chillers cannot support peak or maintenance scenarios.",
+    "calculationInputs": "IT heat load; non-IT load; diversity; N+1 margin; minimum load; water temperatures; condenser condition; expansion.",
+    "riskIfMisapplied": "Oversizing causes cycling and poor efficiency; undersizing causes high temperature alarms and thermal risk.",
+    "controlMeasures": "Use staged operation, minimum flow control, trend review, and seasonal commissioning.",
+    "acceptanceEvidence": "Cooling load calculation, chiller submittal, performance curve, commissioning trend, and maintenance test.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-06 HVAC Chilled-Water and Heat-Rejection System evidence package"
+  },
+  {
+    "id": "DC-V7-0026",
+    "system": "HVAC Chilled-Water and Heat-Rejection System",
+    "systemCode": "DC-06",
+    "item": "N+1 Chilled-Water Plant",
+    "functionalRequirement": "Allow one major cooling unit to be maintained or fail while critical cooling continues.",
+    "recommendedSolution": "Use N+1 chillers, pumps, and heat-rejection components where maintainability is required without full 2N cooling.",
+    "engineeringDecisionLogic": "N+1 is selected when remaining units can support critical cooling load under design condition. The path—chiller, pump, tower, valve, controls, and power—must follow the same redundancy logic.",
+    "whyAlternativesRejected": "Equipment-only N+1 is rejected if shared headers, valves, controls, or power feeds create hidden single points.",
+    "calculationInputs": "Critical cooling load; unit capacity; pump/tower capacity; valve isolation; power feeds; control redundancy; access.",
+    "riskIfMisapplied": "Partial redundancy fails during real maintenance, leaving insufficient cooling path.",
+    "controlMeasures": "Use redundancy matrix, valve lineup procedure, failover test, and capacity trend monitoring.",
+    "acceptanceEvidence": "Redundancy calculation, isolation test, failover test, trend log, and commissioning report.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-06 HVAC Chilled-Water and Heat-Rejection System evidence package"
+  },
+  {
+    "id": "DC-V7-0027",
+    "system": "HVAC Chilled-Water and Heat-Rejection System",
+    "systemCode": "DC-06",
+    "item": "Variable Primary Pumping",
+    "functionalRequirement": "Reduce pumping energy while maintaining stable evaporator flow and differential pressure.",
+    "recommendedSolution": "Use VFD chilled-water pumps with minimum flow protection, differential pressure reset, and staged pump logic.",
+    "engineeringDecisionLogic": "Variable pumping is selected where load variation is large and controls can maintain minimum flow through chillers and coils. It reduces energy but depends on DP sensing and tuning.",
+    "whyAlternativesRejected": "Constant-speed pumping wastes energy. Variable pumping is rejected where minimum flow or control stability cannot be guaranteed.",
+    "calculationInputs": "Design flow; minimum chiller flow; DP location; pump curve; VFD range; bypass requirement; valve authority.",
+    "riskIfMisapplied": "Poor control causes chiller trips, low delta-T, hunting valves, and insufficient flow.",
+    "controlMeasures": "Use minimum flow logic, DP reset, VFD limits, balancing, and trend monitoring.",
+    "acceptanceEvidence": "Pump curve, VFD test, flow test, DP trend, balancing report, and low-flow test.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-06 HVAC Chilled-Water and Heat-Rejection System evidence package"
+  },
+  {
+    "id": "DC-V7-0028",
+    "system": "HVAC Chilled-Water and Heat-Rejection System",
+    "systemCode": "DC-06",
+    "item": "Cooling Tower Cell Control",
+    "functionalRequirement": "Provide heat rejection while controlling fan energy, water use, freezing, plume, and maintenance.",
+    "recommendedSolution": "Use staged cooling tower cells with VFD fans, basin protection, water treatment, and isolation valves.",
+    "engineeringDecisionLogic": "Tower control is selected around seasonal performance. Multiple cells improve efficiency and maintainability but require basin level, water treatment, freeze logic, and fan sequencing.",
+    "whyAlternativesRejected": "A single large tower is rejected where maintenance removes all heat rejection. Excessive cells are rejected when water treatment and controls become unnecessarily complex.",
+    "calculationInputs": "Heat rejection; wet-bulb; fan power; water quality; plume risk; freeze risk; basin volume; isolation.",
+    "riskIfMisapplied": "Poor tower control causes high condenser temperature, biological risk, freezing, plume complaints, or wasted water.",
+    "controlMeasures": "Use water treatment, fan staging, basin monitoring, freeze logic, and seasonal checks.",
+    "acceptanceEvidence": "Tower performance test, water treatment log, fan VFD trend, basin inspection, and winterization record.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-06 HVAC Chilled-Water and Heat-Rejection System evidence package"
+  },
+  {
+    "id": "DC-V7-0029",
+    "system": "HVAC Chilled-Water and Heat-Rejection System",
+    "systemCode": "DC-06",
+    "item": "Water Treatment and Filtration",
+    "functionalRequirement": "Protect chillers, towers, pumps, valves, and heat exchangers from scale, corrosion, fouling, and biological growth.",
+    "recommendedSolution": "Use filtration, chemical dosing, conductivity control, corrosion monitoring, and sampling matched to local water quality.",
+    "engineeringDecisionLogic": "Water treatment is a reliability control. Mechanical capacity is meaningless if fouling and corrosion reduce heat transfer or block strainers.",
+    "whyAlternativesRejected": "One-time flushing is rejected. Generic chemical dosing is rejected without local water analysis and ongoing monitoring.",
+    "calculationInputs": "Makeup water quality; cycles of concentration; corrosion index; bacteria risk; filter rating; dosing control; bleed-off.",
+    "riskIfMisapplied": "Poor treatment causes heat-transfer loss, tube damage, valve blockage, biological hazard, and warranty disputes.",
+    "controlMeasures": "Use sampling plan, dosing control, corrosion coupons, filter DP monitoring, and maintenance records.",
+    "acceptanceEvidence": "Water analysis, chemical log, corrosion coupon report, filter maintenance, tower inspection, and heat exchanger trend.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-06 HVAC Chilled-Water and Heat-Rejection System evidence package"
+  },
+  {
+    "id": "DC-V7-0030",
+    "system": "HVAC Chilled-Water and Heat-Rejection System",
+    "systemCode": "DC-06",
+    "item": "Low Delta-T Management",
+    "functionalRequirement": "Maintain cooling plant efficiency by controlling flow, valve authority, and coil performance.",
+    "recommendedSolution": "Use valve authority checks, DP reset, coil cleaning, flow balancing, and trend analytics to prevent excessive flow and return-temperature collapse.",
+    "engineeringDecisionLogic": "Low delta-T control is selected because it limits plant capacity and increases pump/chiller energy. The root cause must be fixed before adding capacity.",
+    "whyAlternativesRejected": "Adding more chillers is rejected until flow and coil performance are checked. Fixed high DP operation worsens overflow and hunting.",
+    "calculationInputs": "Supply/return temperature; flow; coil performance; valve position; DP setpoint; bypass status; pump speed; load.",
+    "riskIfMisapplied": "Low delta-T causes poor capacity utilization, high energy, unstable staging, and false capacity shortage.",
+    "controlMeasures": "Use trend review, balancing, DP reset, valve authority correction, and coil maintenance.",
+    "acceptanceEvidence": "Trend report, balancing report, valve test, coil inspection, and energy dashboard.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-06 HVAC Chilled-Water and Heat-Rejection System evidence package"
+  },
+  {
+    "id": "DC-V7-0031",
+    "system": "PLC Cooling Source Control",
+    "systemCode": "DC-PLC",
+    "item": "PLC Instead of DDC for Cooling Plant",
+    "functionalRequirement": "Coordinate chillers, pumps, towers, valves, sensors, alarms, and fault modes as one deterministic industrial control system.",
+    "recommendedSolution": "Use PLC-based cooling plant control for large data center cooling sources requiring fast scan, redundant CPU, large I/O, ring network, and fault isolation.",
+    "engineeringDecisionLogic": "PLC is selected when determinism, hot-standby redundancy, and I/O scale are required. Large cooling plants need reliable sequencing across multiple equipment families, not comfort-building control only.",
+    "whyAlternativesRejected": "Ordinary DDC is rejected where CPU redundancy, scan time, I/O scale, and network resilience are insufficient. PLC is not necessary for small standalone HVAC systems.",
+    "calculationInputs": "I/O count; scan time; redundancy target; network topology; equipment sequence; operator interface; alarm priority.",
+    "riskIfMisapplied": "Wrong platform creates unstable sequencing, poor fault response, and limited maintainability.",
+    "controlMeasures": "Use redundant CPU, ring network, documented I/O list, controlled program change, and FAT/SAT.",
+    "acceptanceEvidence": "PLC architecture drawing, I/O list, FAT report, SAT report, source-code custody record, and alarm test.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-PLC PLC Cooling Source Control evidence package"
+  },
+  {
+    "id": "DC-V7-0032",
+    "system": "PLC Cooling Source Control",
+    "systemCode": "DC-PLC",
+    "item": "Hot-Standby CPU Redundancy",
+    "functionalRequirement": "Keep cooling plant control running when one PLC CPU fails or is maintained.",
+    "recommendedSolution": "Use hot-standby CPU with synchronization, automatic switchover, health monitoring, and tested recovery behavior.",
+    "engineeringDecisionLogic": "CPU redundancy is selected because a single controller failure could stop coordinated cooling. Switchover time, data synchronization, and output behavior must be validated.",
+    "whyAlternativesRejected": "Single CPU is rejected for critical cooling plant control. Cold standby spare is rejected because it does not provide immediate continuity.",
+    "calculationInputs": "Switchover time; memory sync; I/O ownership; communication link; output hold behavior; alarm indication.",
+    "riskIfMisapplied": "Poor standby design can reset outputs, restart equipment unexpectedly, or leave the plant uncontrolled.",
+    "controlMeasures": "Use switchover test, output behavior validation, alarm supervision, and firmware/version control.",
+    "acceptanceEvidence": "PLC redundancy test, event log, version record, I/O behavior test, and operator response record.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-PLC PLC Cooling Source Control evidence package"
+  },
+  {
+    "id": "DC-V7-0033",
+    "system": "PLC Cooling Source Control",
+    "systemCode": "DC-PLC",
+    "item": "Ring Network for PLC and I/O",
+    "functionalRequirement": "Maintain communication when one network segment or switch path fails.",
+    "recommendedSolution": "Use industrial Ethernet ring or redundant network for PLC CPUs, remote I/O, HMI, and supervisory interfaces.",
+    "engineeringDecisionLogic": "Ring network is selected where distributed I/O and plant sequencing cannot tolerate a single cable or switch failure. The topology must be monitored, not just physically looped.",
+    "whyAlternativesRejected": "Single star network is rejected for critical remote I/O. Unmanaged loops are rejected because they can create broadcast storms.",
+    "calculationInputs": "Topology; switch type; recovery time; fiber/copper media; route diversity; VLAN; monitored alarms.",
+    "riskIfMisapplied": "Network fault may freeze remote I/O, lose sensor values, or trigger incorrect control state.",
+    "controlMeasures": "Use managed switches, ring protocol, link alarms, route diversity, and failover testing.",
+    "acceptanceEvidence": "Network drawing, switch configuration, fiber test, failover test, alarm test, and as-built route photos.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-PLC PLC Cooling Source Control evidence package"
+  },
+  {
+    "id": "DC-V7-0034",
+    "system": "PLC Cooling Source Control",
+    "systemCode": "DC-PLC",
+    "item": "Full I/O Point List Governance",
+    "functionalRequirement": "Define every control, feedback, status, alarm, and analog point before procurement and programming.",
+    "recommendedSolution": "Use a controlled I/O list with tag, signal type, normal state, fail state, range, alarm class, and acceptance test method.",
+    "engineeringDecisionLogic": "The I/O list is a contractual and technical control. It prevents missing feedback, ambiguous signals, and late disputes between equipment vendors and programmers.",
+    "whyAlternativesRejected": "Programming from vendor drawings alone is rejected because final signals often differ. Informal point naming breaks commissioning and operation.",
+    "calculationInputs": "Equipment list; signal type; voltage/current; range; fail state; alarm priority; cable termination; test method.",
+    "riskIfMisapplied": "Missing or ambiguous I/O creates control gaps, false alarms, and commissioning delay.",
+    "controlMeasures": "Use tag naming rules, revision control, I/O checkout, and signed point-to-point tests.",
+    "acceptanceEvidence": "I/O list, loop test sheet, point-to-point record, alarm matrix, and control cabinet drawing.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-PLC PLC Cooling Source Control evidence package"
+  },
+  {
+    "id": "DC-V7-0035",
+    "system": "PLC Cooling Source Control",
+    "systemCode": "DC-PLC",
+    "item": "Alarm Management Strategy",
+    "functionalRequirement": "Prioritize alarms so operators see safety, capacity, redundancy, and maintenance risks clearly.",
+    "recommendedSolution": "Classify alarms by criticality, response time, cause, operator action, and escalation path.",
+    "engineeringDecisionLogic": "Alarm management is selected to avoid alarm flooding. A data center needs actionable alarms distinguishing capacity loss from maintenance warnings.",
+    "whyAlternativesRejected": "All alarms as equal priority hides critical events. Suppressing alarms without root cause removes evidence.",
+    "calculationInputs": "Alarm type; priority; delay; latching rule; reset rule; notification channel; operator response; event logging.",
+    "riskIfMisapplied": "Poor alarm design causes missed incidents, nuisance response, and weak post-event evidence.",
+    "controlMeasures": "Use alarm rationalization, delay tuning, acknowledgement tracking, and periodic alarm review.",
+    "acceptanceEvidence": "Alarm matrix, HMI screenshots, alarm test report, event log, and operator training record.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-PLC PLC Cooling Source Control evidence package"
+  },
+  {
+    "id": "DC-V7-0036",
+    "system": "PLC Cooling Source Control",
+    "systemCode": "DC-PLC",
+    "item": "Chiller Staging Logic",
+    "functionalRequirement": "Start, stop, and rotate chillers based on load, redundancy, efficiency, and minimum runtime.",
+    "recommendedSolution": "Use staged control with load thresholds, minimum on/off time, lead-lag rotation, failure lockout, and manual override.",
+    "engineeringDecisionLogic": "Staging maintains stable cooling and equipment life. It must avoid short cycling, overloading one machine, or losing redundancy during changing IT load.",
+    "whyAlternativesRejected": "Manual-only staging is rejected for critical plants. Simple temperature-only staging is rejected where flow, load, and redundancy state matter.",
+    "calculationInputs": "Cooling load; chiller capacity; minimum load; supply temperature; flow; runtime; failure status; maintenance mode.",
+    "riskIfMisapplied": "Bad staging causes cycling, low delta-T, loss of redundancy, and delayed response to load increase.",
+    "controlMeasures": "Use staged thresholds, runtime equalization, failure lockout, trend review, and seasonal tuning.",
+    "acceptanceEvidence": "Control sequence, trend log, staging test, chiller alarm record, and commissioning report.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-PLC PLC Cooling Source Control evidence package"
+  },
+  {
+    "id": "DC-V7-0037",
+    "system": "Sensors, Meters and Instrumentation",
+    "systemCode": "DC-20",
+    "item": "Temperature and Humidity Sensor Placement",
+    "functionalRequirement": "Measure conditions that represent actual IT, cooling coil, and plant performance.",
+    "recommendedSolution": "Place sensors at return/supply air, chilled-water headers, condenser-water headers, room zones, and critical control locations according to control purpose.",
+    "engineeringDecisionLogic": "Sensor location is selected by control consequence. A staging sensor must represent system load; an alarm sensor must represent the protected asset.",
+    "whyAlternativesRejected": "Convenient wall mounting is rejected where it does not reflect rack or water-side condition. Excessive sensors are rejected if they create data noise without action logic.",
+    "calculationInputs": "Control objective; airflow path; water header location; response time; calibration access; redundancy; alarm threshold.",
+    "riskIfMisapplied": "Wrong placement causes false readings, unstable control, or missed hot spots.",
+    "controlMeasures": "Use location review, calibration plan, trend validation, and alarm verification.",
+    "acceptanceEvidence": "Sensor layout, calibration certificate, trend comparison, point-to-point test, and commissioning report.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-20 Sensors, Meters and Instrumentation evidence package"
+  },
+  {
+    "id": "DC-V7-0038",
+    "system": "Sensors, Meters and Instrumentation",
+    "systemCode": "DC-20",
+    "item": "Differential Pressure Sensors",
+    "functionalRequirement": "Support pump speed reset, filter monitoring, and flow stability.",
+    "recommendedSolution": "Install DP sensors across critical headers, filters, coils, and pump loops with proper range and isolation valves.",
+    "engineeringDecisionLogic": "DP sensors are selected where pressure difference directly controls flow or detects blockage. Range and location must match the control loop.",
+    "whyAlternativesRejected": "Using pump discharge pressure only is rejected because it may not represent remote load. Overwide sensor range reduces accuracy.",
+    "calculationInputs": "Design DP; minimum DP; sensor range; impulse line; isolation valve; location; temperature effect; calibration access.",
+    "riskIfMisapplied": "Wrong DP sensing causes pump hunting, insufficient flow, or false filter status.",
+    "controlMeasures": "Use sensor range review, calibration, trend validation, and DP reset tuning.",
+    "acceptanceEvidence": "Sensor certificate, calibration record, trend log, control tuning record, and functional test.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-20 Sensors, Meters and Instrumentation evidence package"
+  },
+  {
+    "id": "DC-V7-0039",
+    "system": "Sensors, Meters and Instrumentation",
+    "systemCode": "DC-20",
+    "item": "Flow Meter Selection",
+    "functionalRequirement": "Verify chilled water, condenser water, fuel, and makeup water flow where calculation and operation need evidence.",
+    "recommendedSolution": "Use ultrasonic, magnetic, turbine, or differential pressure measurement based on fluid, pipe size, straight length, accuracy, and maintenance.",
+    "engineeringDecisionLogic": "Flow meter type is selected by fluid and installation condition. Straight pipe length, conductivity, fouling, low-flow accuracy, and service access matter.",
+    "whyAlternativesRejected": "Selecting only by pipe diameter is rejected. Omitting flow measurement is rejected where flow is needed for capacity or acceptance proof.",
+    "calculationInputs": "Fluid type; pipe size; straight run; velocity range; accuracy; signal type; maintenance access; calibration plan.",
+    "riskIfMisapplied": "Wrong meter creates false capacity readings, poor balancing, and weak acceptance evidence.",
+    "controlMeasures": "Use meter selection sheet, installation detail, calibration plan, and comparison test.",
+    "acceptanceEvidence": "Meter certificate, installation photo, calibration record, trend validation, and acceptance test.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-20 Sensors, Meters and Instrumentation evidence package"
+  },
+  {
+    "id": "DC-V7-0040",
+    "system": "Sensors, Meters and Instrumentation",
+    "systemCode": "DC-20",
+    "item": "Valve Position Feedback",
+    "functionalRequirement": "Confirm whether a valve actually reached commanded position.",
+    "recommendedSolution": "Use analog or digital feedback for critical isolation, bypass, and modulating valves with alarm on deviation.",
+    "engineeringDecisionLogic": "Feedback is selected where control depends on actual valve state. Command signal alone is not evidence of movement.",
+    "whyAlternativesRejected": "No feedback is rejected for critical valves. Simple open/closed feedback is rejected where intermediate modulation affects flow or pressure.",
+    "calculationInputs": "Valve type; actuator signal; feedback type; stroke time; fail position; alarm delay; manual override indication.",
+    "riskIfMisapplied": "Missing feedback hides stuck valves and creates wrong sequencing assumptions.",
+    "controlMeasures": "Use feedback alarms, stroke testing, manual override indication, and trend review.",
+    "acceptanceEvidence": "Valve test report, feedback loop test, alarm test, stroke time record, and commissioning sheet.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-20 Sensors, Meters and Instrumentation evidence package"
+  },
+  {
+    "id": "DC-V7-0041",
+    "system": "Sensors, Meters and Instrumentation",
+    "systemCode": "DC-20",
+    "item": "Leak Detection Routing",
+    "functionalRequirement": "Detect water leakage before it reaches IT equipment, electrical rooms, or critical control cabinets.",
+    "recommendedSolution": "Use leak cable or point sensors under raised floor, around chilled water, drain lines, pumps, and high-risk valves.",
+    "engineeringDecisionLogic": "Leak detection is selected by water source and damage consequence. Sensor route must cover likely leak paths, not only equipment bases.",
+    "whyAlternativesRejected": "Spot sensors only are rejected where water can travel under floor. Cable detection is rejected where maintenance damage or false alarms cannot be managed.",
+    "calculationInputs": "Water sources; floor slope; containment; cable route; zone naming; alarm priority; maintenance access.",
+    "riskIfMisapplied": "Poor routing causes late detection, false alarm, or inability to locate leak zone.",
+    "controlMeasures": "Use zone mapping, alarm test, maintenance protection, and periodic wet test.",
+    "acceptanceEvidence": "Leak detection layout, zone test, alarm log, maintenance record, and incident drill.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-20 Sensors, Meters and Instrumentation evidence package"
+  },
+  {
+    "id": "DC-V7-0042",
+    "system": "Sensors, Meters and Instrumentation",
+    "systemCode": "DC-20",
+    "item": "Instrument Signal Standard",
+    "functionalRequirement": "Maintain stable and diagnosable signals from field devices to PLC or BMS.",
+    "recommendedSolution": "Use 4–20 mA, 0–10 V, dry contact, pulse, RS-485, Modbus, or Ethernet according to distance, interference, accuracy, and device capability.",
+    "engineeringDecisionLogic": "Signal type is selected by reliability and diagnostic value. For long or noisy routes, current loop is often more robust than voltage signals.",
+    "whyAlternativesRejected": "Voltage signal is rejected where cable length and interference reduce accuracy. Digital protocol is rejected where hardwired safety feedback is required.",
+    "calculationInputs": "Signal distance; noise environment; accuracy; fail detection; cable type; grounding; protocol support; maintenance skill.",
+    "riskIfMisapplied": "Wrong signal type causes noisy readings, false alarms, or hidden signal loss.",
+    "controlMeasures": "Use shielded cable rules, grounding review, loop test, and signal failure alarm logic.",
+    "acceptanceEvidence": "Loop test sheet, cable test, signal trend, grounding inspection, and point-to-point record.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-20 Sensors, Meters and Instrumentation evidence package"
+  },
+  {
+    "id": "DC-V7-0043",
+    "system": "Valves and Actuators",
+    "systemCode": "DC-25",
+    "item": "Modulating Valve Selection",
+    "functionalRequirement": "Control chilled-water or condenser-water flow continuously instead of only opening or closing.",
+    "recommendedSolution": "Use modulating valves with suitable authority, actuator torque, control signal, feedback, fail position, and manual override.",
+    "engineeringDecisionLogic": "Modulating valves are selected where stable flow regulation is required. Valve authority and actuator behavior determine control quality more than nominal pipe size.",
+    "whyAlternativesRejected": "On/off valves are rejected where continuous regulation is needed. Oversized valves are rejected because they operate near closed and cause unstable control.",
+    "calculationInputs": "Design flow; pressure drop; valve authority; Cv/Kv; actuator torque; signal type; fail position; feedback.",
+    "riskIfMisapplied": "Wrong selection causes hunting, poor delta-T, unstable pressure, and inability to balance load.",
+    "controlMeasures": "Use valve sizing, authority check, stroke test, tuning, and trend review.",
+    "acceptanceEvidence": "Valve sizing sheet, actuator data, stroke test, feedback test, and commissioning trend.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-25 Valves and Actuators evidence package"
+  },
+  {
+    "id": "DC-V7-0044",
+    "system": "Valves and Actuators",
+    "systemCode": "DC-25",
+    "item": "Motorized Isolation Valve",
+    "functionalRequirement": "Isolate equipment, branches, or maintenance zones automatically or remotely.",
+    "recommendedSolution": "Use motorized butterfly or ball valves with open/close feedback, local override, fail behavior, and lockable isolation.",
+    "engineeringDecisionLogic": "Motorized isolation is selected where operators need safe and quick changeover or maintenance isolation without manual travel delay.",
+    "whyAlternativesRejected": "Manual-only valves are rejected where remote fault response is required. Motorized valves are rejected where failure position creates unsafe isolation without bypass.",
+    "calculationInputs": "Pipe size; pressure; closing time; actuator torque; feedback; fail state; manual override; maintenance zone.",
+    "riskIfMisapplied": "Wrong isolation valve logic can cut off cooling or prevent maintenance.",
+    "controlMeasures": "Use open/close permissives, feedback alarms, manual override, and valve lineup procedure.",
+    "acceptanceEvidence": "Valve submittal, stroke time test, feedback test, isolation procedure, and commissioning record.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-25 Valves and Actuators evidence package"
+  },
+  {
+    "id": "DC-V7-0045",
+    "system": "Valves and Actuators",
+    "systemCode": "DC-25",
+    "item": "Fail Position Definition",
+    "functionalRequirement": "Define whether a valve or damper should fail open, fail closed, or fail in place during power or signal loss.",
+    "recommendedSolution": "Select fail position by protected load, safety condition, hydraulic consequence, and recovery procedure.",
+    "engineeringDecisionLogic": "Fail position is selected by consequence analysis. Cooling availability may prefer fail-open; containment or safety may require fail-closed.",
+    "whyAlternativesRejected": "Default actuator fail behavior is rejected. Same fail rule for every valve is rejected because systems have different consequences.",
+    "calculationInputs": "Load protected; pressure consequence; bypass path; power failure mode; actuator type; manual recovery; alarm logic.",
+    "riskIfMisapplied": "Wrong fail position can flood a system, starve cooling, or create unsafe state.",
+    "controlMeasures": "Use fail-state matrix, power-loss test, alarm mapping, and operator procedure.",
+    "acceptanceEvidence": "Fail-state matrix, power-off test, actuator certificate, alarm test, and O&M instruction.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-25 Valves and Actuators evidence package"
+  },
+  {
+    "id": "DC-V7-0046",
+    "system": "Valves and Actuators",
+    "systemCode": "DC-25",
+    "item": "4–20 mA Control and Feedback",
+    "functionalRequirement": "Provide stable analog control and clear diagnostics for modulating devices.",
+    "recommendedSolution": "Use 4–20 mA for long analog control runs where signal loss detection and interference resistance are needed.",
+    "engineeringDecisionLogic": "Current signal is selected where cable length, noise, or diagnostics make voltage signals less reliable. Signal below 4 mA indicates fault for alarm logic.",
+    "whyAlternativesRejected": "0–10 V is rejected for long or noisy routes. Digital-only command is rejected where simple diagnostics are preferred.",
+    "calculationInputs": "Cable length; noise level; signal resolution; device capability; PLC input type; grounding; fault detection.",
+    "riskIfMisapplied": "Wrong signal choice creates inaccurate modulation or hidden open-circuit faults.",
+    "controlMeasures": "Use shielded cable, grounding rules, loop test, scaling check, and fault alarm threshold.",
+    "acceptanceEvidence": "Loop calibration, scaling test, signal failure test, cable insulation record, and trend review.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-25 Valves and Actuators evidence package"
+  },
+  {
+    "id": "DC-V7-0047",
+    "system": "Valves and Actuators",
+    "systemCode": "DC-25",
+    "item": "Bypass Valve Logic",
+    "functionalRequirement": "Protect minimum flow and maintain stability during low load or equipment transition.",
+    "recommendedSolution": "Use bypass valves only where minimum flow, pressure relief, or transition stability requires them, with clear enable conditions.",
+    "engineeringDecisionLogic": "Bypass valves are selected as controlled stability tools, not permanent overflow paths. They must close when normal load and valve authority are available.",
+    "whyAlternativesRejected": "Permanent bypass is rejected because it wastes pumping and destroys delta-T. No bypass is rejected where chiller minimum flow cannot otherwise be protected.",
+    "calculationInputs": "Minimum flow; pressure differential; chiller requirement; valve authority; control sequence; low-load condition.",
+    "riskIfMisapplied": "Bad bypass logic causes low delta-T, unstable pump operation, or chiller trip.",
+    "controlMeasures": "Use enable/disable criteria, DP reset, flow verification, and trend alarms.",
+    "acceptanceEvidence": "Control sequence, flow test, bypass trend, chiller low-flow test, and commissioning record.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-25 Valves and Actuators evidence package"
+  },
+  {
+    "id": "DC-V7-0048",
+    "system": "Valves and Actuators",
+    "systemCode": "DC-25",
+    "item": "Balancing Valve Strategy",
+    "functionalRequirement": "Control hydraulic balance and prevent branches from stealing flow.",
+    "recommendedSolution": "Use manual or automatic balancing valves based on system complexity, load variation, and commissioning approach.",
+    "engineeringDecisionLogic": "Balancing strategy is selected by hydraulic variability. Automatic balancing helps dynamic systems but requires correct sizing and maintenance understanding.",
+    "whyAlternativesRejected": "No balancing is rejected in multi-branch systems. Automatic balancing is rejected where dirt, service skill, or cost makes it unreliable.",
+    "calculationInputs": "Branch flow; pressure range; valve authority; commissioning method; maintenance skill; strainer condition.",
+    "riskIfMisapplied": "Poor balancing creates hot spots, low delta-T, and pump energy waste.",
+    "controlMeasures": "Use flow measurement, commissioning balance report, strainers, and trend verification.",
+    "acceptanceEvidence": "Balancing report, flow test, valve setting record, strainer inspection, and trend comparison.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-25 Valves and Actuators evidence package"
+  },
+  {
+    "id": "DC-V7-0049",
+    "system": "Fire Safety and Life Safety Interface",
+    "systemCode": "DC-08",
+    "item": "Aspirating Smoke Detection",
+    "functionalRequirement": "Detect early smoke or overheating before conventional detectors react.",
+    "recommendedSolution": "Use aspirating smoke detection in data halls and critical electrical rooms with sampling pipe design and alarm staging.",
+    "engineeringDecisionLogic": "Aspirating detection is selected for early warning in high-value IT environments. It must be coordinated with airflow, filtration, maintenance access, and nuisance alarm management.",
+    "whyAlternativesRejected": "Only conventional spot detectors are rejected where early warning is required. Aspirating systems are rejected where maintenance and sampling design cannot be supported.",
+    "calculationInputs": "Airflow pattern; sampling pipe length; detector sensitivity; alarm stages; maintenance access; dust filter; fire panel integration.",
+    "riskIfMisapplied": "Wrong design causes late detection or nuisance alarms, undermining operator trust.",
+    "controlMeasures": "Use sampling calculation, staged alarms, filter maintenance, and response procedure.",
+    "acceptanceEvidence": "Detector certificate, sampling pipe test, alarm test, maintenance log, and fire panel record.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-08 Fire Safety and Life Safety Interface evidence package"
+  },
+  {
+    "id": "DC-V7-0050",
+    "system": "Fire Safety and Life Safety Interface",
+    "systemCode": "DC-08",
+    "item": "Clean Agent or Inert Gas Boundary",
+    "functionalRequirement": "Suppress fire in enclosed critical rooms while minimizing equipment damage and life safety risk.",
+    "recommendedSolution": "Use clean agent or inert gas only after room integrity, occupancy safety, pressure relief, and authority approval are confirmed.",
+    "engineeringDecisionLogic": "Suppression type is selected by room tightness, personnel safety, environmental constraints, and protected asset value. Hold time must be proven.",
+    "whyAlternativesRejected": "Water-only suppression may be rejected for sensitive equipment rooms. Gas suppression is rejected where leakage, egress, or pressure relief cannot be proven.",
+    "calculationInputs": "Room volume; leakage rate; agent concentration; hold time; pressure relief; egress; detection logic; local approval.",
+    "riskIfMisapplied": "Wrong suppression design may fail to extinguish, endanger occupants, or damage enclosures.",
+    "controlMeasures": "Use door fan test, abort/release logic, warning signs, maintenance inspection, and authority witness.",
+    "acceptanceEvidence": "Room integrity test, agent calculation, discharge or functional test, signage inspection, and approval record.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-08 Fire Safety and Life Safety Interface evidence package"
+  },
+  {
+    "id": "DC-V7-0051",
+    "system": "Fire Safety and Life Safety Interface",
+    "systemCode": "DC-08",
+    "item": "Fire Alarm Matrix",
+    "functionalRequirement": "Define exactly how detection, suppression, HVAC, power, access control, and alarms interact.",
+    "recommendedSolution": "Use a cause-and-effect matrix covering smoke, heat, gas release, EPO, damper control, fan shutdown, door release, and notification.",
+    "engineeringDecisionLogic": "The matrix is selected because interface faults often appear between systems. Every cause must have a verified effect and responsible system.",
+    "whyAlternativesRejected": "Informal coordination is rejected. Vendor-only logic tables are rejected unless integrated with the whole facility sequence.",
+    "calculationInputs": "Detection zone; alarm stage; suppression state; HVAC action; power action; access control; operator notification; reset rule.",
+    "riskIfMisapplied": "Unclear matrix creates unsafe release, delayed response, or unnecessary service interruption.",
+    "controlMeasures": "Use witnessed cause-and-effect test, interface checklist, and revision control.",
+    "acceptanceEvidence": "Cause-and-effect matrix, fire panel test, BMS/PLC interface test, witness signatures, and approval record.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-08 Fire Safety and Life Safety Interface evidence package"
+  },
+  {
+    "id": "DC-V7-0052",
+    "system": "Fire Safety and Life Safety Interface",
+    "systemCode": "DC-08",
+    "item": "Emergency Power Off Policy",
+    "functionalRequirement": "Define when and how power is disconnected without creating unnecessary data loss or safety hazard.",
+    "recommendedSolution": "Use governed EPO design with code compliance, covers, labels, alarm integration, and operator procedure.",
+    "engineeringDecisionLogic": "EPO is selected as a life-safety function, not an operational convenience. It must be hard to trigger accidentally and clear in consequence.",
+    "whyAlternativesRejected": "Unprotected EPO buttons are rejected. Eliminating EPO is rejected where code or owner safety policy requires it.",
+    "calculationInputs": "Code requirement; protected zone; circuit scope; button location; guard cover; signage; alarm; restart procedure.",
+    "riskIfMisapplied": "Poor EPO design can cause accidental outage or unsafe inability to isolate power.",
+    "controlMeasures": "Use guarded stations, labels, restricted access, testing, and restart procedure.",
+    "acceptanceEvidence": "EPO test, signage inspection, authority approval, training record, and incident drill.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-08 Fire Safety and Life Safety Interface evidence package"
+  },
+  {
+    "id": "DC-V7-0053",
+    "system": "Fire Safety and Life Safety Interface",
+    "systemCode": "DC-08",
+    "item": "Fire Pump Power Interface",
+    "functionalRequirement": "Maintain fire protection water supply during utility loss and emergency conditions.",
+    "recommendedSolution": "Coordinate fire pump power source, transfer, controller, generator priority, and alarm monitoring.",
+    "engineeringDecisionLogic": "Fire pump interface is selected as a life-safety priority. It must not be accidentally load-shed by data center capacity controls.",
+    "whyAlternativesRejected": "Treating fire pump as ordinary mechanical load is rejected. Sharing unverified emergency capacity is rejected.",
+    "calculationInputs": "Fire pump load; starting current; generator priority; controller rating; transfer method; alarm contacts; code requirements.",
+    "riskIfMisapplied": "Bad interface may prevent fire pump start or overload emergency power during fire condition.",
+    "controlMeasures": "Use priority controls, generator capacity check, controller testing, and alarm supervision.",
+    "acceptanceEvidence": "Fire pump test, controller certificate, generator load calculation, alarm test, and authority witness.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-08 Fire Safety and Life Safety Interface evidence package"
+  },
+  {
+    "id": "DC-V7-0054",
+    "system": "Fire Safety and Life Safety Interface",
+    "systemCode": "DC-08",
+    "item": "Battery Fire Safety Interface",
+    "functionalRequirement": "Manage battery fire or thermal event risk with detection, ventilation, isolation, and emergency response.",
+    "recommendedSolution": "Use battery-specific detection, BMS alarm, isolation, ventilation, signage, and emergency procedure according to battery chemistry.",
+    "engineeringDecisionLogic": "Battery fire strategy is selected by chemistry and room layout. UPS design must be coordinated with detection and operator response.",
+    "whyAlternativesRejected": "Generic room smoke detection is rejected where battery chemistry needs additional monitoring. Aggressive shutdown logic is rejected if it creates unnecessary IT outage without safety need.",
+    "calculationInputs": "Battery chemistry; room volume; BMS alarms; thermal sensors; ventilation; isolation switch; fire response plan.",
+    "riskIfMisapplied": "Poor interface causes late response to thermal event or unsafe shutdown decision.",
+    "controlMeasures": "Use BMS-fire integration, emergency procedure, thermal monitoring, and periodic drills.",
+    "acceptanceEvidence": "BMS alarm test, fire interface test, thermal trend, emergency drill, and authority review.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-08 Fire Safety and Life Safety Interface evidence package"
+  },
+  {
+    "id": "DC-V7-0055",
+    "system": "BMS, DCIM and Network Interface",
+    "systemCode": "DC-30",
+    "item": "BMS and PLC Boundary",
+    "functionalRequirement": "Define which system supervises, which system controls, and how alarms and commands are exchanged.",
+    "recommendedSolution": "Let PLC execute critical cooling control and let BMS/DCIM supervise trends, alarms, reporting, and non-critical integration.",
+    "engineeringDecisionLogic": "The boundary prevents supervisory systems from disturbing deterministic plant control. BMS should not override safety-critical PLC sequence without controlled authority.",
+    "whyAlternativesRejected": "Putting all logic in BMS is rejected for critical cooling plants. Isolating PLC without supervision is rejected because operators lose visibility.",
+    "calculationInputs": "Control authority; alarm mapping; command permissions; protocol; data rate; cybersecurity; operator interface.",
+    "riskIfMisapplied": "Unclear boundary causes conflicting commands, missing alarms, or uncontrolled overrides.",
+    "controlMeasures": "Use interface matrix, read/write permission control, alarm mapping, and change management.",
+    "acceptanceEvidence": "Interface matrix, point mapping, integration test, alarm test, and cybersecurity review.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-30 BMS, DCIM and Network Interface evidence package"
+  },
+  {
+    "id": "DC-V7-0056",
+    "system": "BMS, DCIM and Network Interface",
+    "systemCode": "DC-30",
+    "item": "DCIM Capacity Dashboard",
+    "functionalRequirement": "Track rack, row, room, power, cooling, and space capacity for planning and risk control.",
+    "recommendedSolution": "Use DCIM or structured dashboard connected to meters, sensors, asset records, and change-control process.",
+    "engineeringDecisionLogic": "DCIM is selected where capacity changes must be visible and auditable. It is useful only if asset data and meter boundaries are maintained.",
+    "whyAlternativesRejected": "A dashboard without verified data is rejected. Manual spreadsheets alone are rejected where live capacity risk is high.",
+    "calculationInputs": "Rack load; PDU data; cooling capacity; space; network ports; asset changes; meter accuracy; update process.",
+    "riskIfMisapplied": "Poor capacity tracking causes stranded capacity, overloaded circuits, and planning errors.",
+    "controlMeasures": "Use asset register, meter validation, change workflow, and periodic capacity review.",
+    "acceptanceEvidence": "Dashboard screenshot, asset register, meter validation, capacity report, and change log.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-30 BMS, DCIM and Network Interface evidence package"
+  },
+  {
+    "id": "DC-V7-0057",
+    "system": "BMS, DCIM and Network Interface",
+    "systemCode": "DC-30",
+    "item": "Protocol Gateway Selection",
+    "functionalRequirement": "Connect PLC, meters, UPS, chillers, generators, fire panel, and BMS/DCIM without losing data meaning.",
+    "recommendedSolution": "Use Modbus, BACnet, SNMP, OPC UA, or gateway mapping according to device capability, polling rate, alarm priority, and cybersecurity.",
+    "engineeringDecisionLogic": "Gateway protocol is selected by data type and control risk. Monitoring data can use standard polling; critical commands require stronger boundaries.",
+    "whyAlternativesRejected": "Using one protocol for everything is rejected. Unsecured gateways are rejected because they create operational and cyber risk.",
+    "calculationInputs": "Device protocol; polling rate; data direction; alarm priority; cybersecurity; naming; time stamp; command permission.",
+    "riskIfMisapplied": "Poor gateway mapping creates missing alarms, stale data, or unauthorized command paths.",
+    "controlMeasures": "Use point map, read/write restrictions, network segmentation, time sync, and integration testing.",
+    "acceptanceEvidence": "Protocol map, gateway configuration, point test, cybersecurity review, and alarm trend.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-30 BMS, DCIM and Network Interface evidence package"
+  },
+  {
+    "id": "DC-V7-0058",
+    "system": "BMS, DCIM and Network Interface",
+    "systemCode": "DC-30",
+    "item": "Time Synchronization",
+    "functionalRequirement": "Make event logs from PLC, UPS, generator, fire, BMS, and DCIM comparable during incidents.",
+    "recommendedSolution": "Use NTP or approved time source with monitored synchronization for controllers, servers, meters, and loggers.",
+    "engineeringDecisionLogic": "Time sync is selected because incident analysis depends on event order. Without synchronized clocks, root-cause conclusions become unreliable.",
+    "whyAlternativesRejected": "Manual time setting is rejected. Time sync without monitoring is rejected because drift can remain hidden.",
+    "calculationInputs": "Time source; device support; network segmentation; timezone; daylight saving; log retention; monitoring.",
+    "riskIfMisapplied": "Clock drift causes wrong incident sequence, dispute, and ineffective root-cause analysis.",
+    "controlMeasures": "Use NTP monitoring, periodic comparison, and event log retention policy.",
+    "acceptanceEvidence": "NTP configuration, clock check record, event log sample, and incident review evidence.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-30 BMS, DCIM and Network Interface evidence package"
+  },
+  {
+    "id": "DC-V7-0059",
+    "system": "BMS, DCIM and Network Interface",
+    "systemCode": "DC-30",
+    "item": "Cybersecurity Baseline for OT",
+    "functionalRequirement": "Protect control and monitoring systems without blocking safe operation and maintenance.",
+    "recommendedSolution": "Use network segmentation, least-privilege access, strong credentials, remote access control, backup, patch review, and logging.",
+    "engineeringDecisionLogic": "Cybersecurity is selected as an operational risk control. PLC/BMS/DCIM systems must be protected according to role and safety impact.",
+    "whyAlternativesRejected": "Flat networks are rejected. Uncontrolled remote access is rejected. Blind patching is also rejected where it may disrupt controls.",
+    "calculationInputs": "Network zones; user roles; remote access; backup; patch cycle; vendor access; logging; incident response.",
+    "riskIfMisapplied": "Weak cybersecurity can cause outage, manipulation, data leakage, or loss of control visibility.",
+    "controlMeasures": "Use access control, firewall rules, backup, vendor session approval, and periodic review.",
+    "acceptanceEvidence": "Network diagram, user list, backup record, access log, firewall rule review, and recovery test.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-30 BMS, DCIM and Network Interface evidence package"
+  },
+  {
+    "id": "DC-V7-0060",
+    "system": "BMS, DCIM and Network Interface",
+    "systemCode": "DC-30",
+    "item": "Historian and Trend Retention",
+    "functionalRequirement": "Retain operational data for performance optimization, fault analysis, and acceptance evidence.",
+    "recommendedSolution": "Store key trends at appropriate intervals for temperatures, flows, power, alarms, equipment status, and capacity metrics.",
+    "engineeringDecisionLogic": "Trend retention is selected where data supports evidence. Sampling interval and storage period must match the event being analyzed.",
+    "whyAlternativesRejected": "No historian is rejected for critical operation. Excessive high-frequency storage is rejected if it creates noise and burden.",
+    "calculationInputs": "Point list; sample interval; storage duration; event trigger; data quality; backup; dashboard use.",
+    "riskIfMisapplied": "Missing trends prevent root-cause analysis and weaken performance claims.",
+    "controlMeasures": "Use trend standard, archive policy, data quality checks, and incident review templates.",
+    "acceptanceEvidence": "Trend export, historian configuration, backup record, and incident analysis report.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-30 BMS, DCIM and Network Interface evidence package"
+  },
+  {
+    "id": "DC-V7-0061",
+    "system": "Commissioning and Acceptance",
+    "systemCode": "DC-40",
+    "item": "Factory Acceptance Test",
+    "functionalRequirement": "Verify equipment or packaged systems before shipment and reduce site risk.",
+    "recommendedSolution": "Use FAT for switchgear, UPS, generator panels, PLC cabinets, pump skids, and prefabricated modules where factory testing proves workmanship and function.",
+    "engineeringDecisionLogic": "FAT is selected where defects would be costly to repair on site. The test must include functional sequence, I/O simulation, protection checks, and documentation review.",
+    "whyAlternativesRejected": "Skipping FAT is rejected for complex systems. A visual-only FAT is rejected as insufficient.",
+    "calculationInputs": "Equipment complexity; factory integration; test script; witness requirement; shipment schedule; defect risk.",
+    "riskIfMisapplied": "Undetected factory defects create site delays and retrofit cost.",
+    "controlMeasures": "Use FAT protocol, hold points, defect log, and shipment release criteria.",
+    "acceptanceEvidence": "FAT report, test photos, defect closure, calibration record, and shipment release.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-40 Commissioning and Acceptance evidence package"
+  },
+  {
+    "id": "DC-V7-0062",
+    "system": "Commissioning and Acceptance",
+    "systemCode": "DC-40",
+    "item": "Site Acceptance Test",
+    "functionalRequirement": "Verify installed equipment, wiring, controls, and interfaces after site installation.",
+    "recommendedSolution": "Use SAT after installation for local power, control wiring, communication, safety interlocks, and operational modes.",
+    "engineeringDecisionLogic": "SAT is selected because factory success does not prove site wiring, installation, or interface correctness.",
+    "whyAlternativesRejected": "Relying only on FAT is rejected. Energizing without SAT prerequisites is rejected.",
+    "calculationInputs": "Installation status; cable tests; power source; control loop; network; safety permits; test script.",
+    "riskIfMisapplied": "Poor SAT leads to hidden wiring errors, unsafe startup, and delayed commissioning.",
+    "controlMeasures": "Use pre-test checklist, point-to-point test, loop check, and deficiency closure.",
+    "acceptanceEvidence": "SAT report, cable test, loop check, safety permit, and deficiency log.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-40 Commissioning and Acceptance evidence package"
+  },
+  {
+    "id": "DC-V7-0063",
+    "system": "Commissioning and Acceptance",
+    "systemCode": "DC-40",
+    "item": "Pre-Functional Checklist",
+    "functionalRequirement": "Confirm equipment is ready before functional testing begins.",
+    "recommendedSolution": "Use checklist for installation completeness, torque, labeling, cleaning, lubrication, alignment, valve position, and documentation.",
+    "engineeringDecisionLogic": "Pre-functional checks are selected to avoid wasting functional test time on basic installation defects.",
+    "whyAlternativesRejected": "Skipping checklists turns commissioning into troubleshooting. Generic checklists are rejected if they do not match equipment.",
+    "calculationInputs": "Equipment type; installation status; documentation; test instruments; safety conditions; witness points.",
+    "riskIfMisapplied": "Missing checks cause failed tests, safety issues, and repeat work.",
+    "controlMeasures": "Use discipline-specific checklists, sign-off roles, and photo evidence.",
+    "acceptanceEvidence": "Signed checklist, installation photos, torque record, insulation test, and inspection report.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-40 Commissioning and Acceptance evidence package"
+  },
+  {
+    "id": "DC-V7-0064",
+    "system": "Commissioning and Acceptance",
+    "systemCode": "DC-40",
+    "item": "Functional Performance Test",
+    "functionalRequirement": "Prove each subsystem performs intended operation under defined conditions.",
+    "recommendedSolution": "Test UPS transfer, generator start, chiller staging, pump failover, valve control, alarm response, and BMS/DCIM visibility.",
+    "engineeringDecisionLogic": "Functional testing proves actual behavior, not just equipment availability.",
+    "whyAlternativesRejected": "Static inspection only is rejected. Testing without expected results is rejected because pass/fail cannot be judged.",
+    "calculationInputs": "Test condition; expected response; load state; alarm; trend; operator action; recovery method.",
+    "riskIfMisapplied": "Untested sequence fails during real incident or maintenance event.",
+    "controlMeasures": "Use scripts, expected results, hold points, rollback plan, and signed witness.",
+    "acceptanceEvidence": "Functional test report, trend log, alarm log, witness sign-off, and deficiency closure.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-40 Commissioning and Acceptance evidence package"
+  },
+  {
+    "id": "DC-V7-0065",
+    "system": "Commissioning and Acceptance",
+    "systemCode": "DC-40",
+    "item": "Integrated Systems Test",
+    "functionalRequirement": "Prove power, cooling, controls, fire, network, and operations respond together under realistic failure scenarios.",
+    "recommendedSolution": "Perform IST for utility loss, generator start, UPS discharge, pump failure, chiller failure, sensor fault, fire interface, and recovery.",
+    "engineeringDecisionLogic": "IST is selected because data center reliability depends on interfaces. It exposes hidden dependencies between systems that individually passed tests.",
+    "whyAlternativesRejected": "Testing systems separately only is rejected. Testing without load or trend evidence is rejected.",
+    "calculationInputs": "Failure scenarios; load banks; thermal load; operator script; alarm paths; safety plan; rollback criteria.",
+    "riskIfMisapplied": "Hidden interface faults cause cascading failure during the first real outage.",
+    "controlMeasures": "Use staged tests, live trend capture, witness team, stop criteria, and retest protocol.",
+    "acceptanceEvidence": "IST report, trend package, event log, operator record, and final readiness certificate.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-40 Commissioning and Acceptance evidence package"
+  },
+  {
+    "id": "DC-V7-0066",
+    "system": "Commissioning and Acceptance",
+    "systemCode": "DC-40",
+    "item": "Operator Training and Drill",
+    "functionalRequirement": "Ensure operators can respond to alarms, manual modes, maintenance bypass, and emergency procedures.",
+    "recommendedSolution": "Provide training on normal operation, MOP/SOP/EOP, alarm response, manual override, and incident reporting.",
+    "engineeringDecisionLogic": "Training is selected because complex systems fail when staff do not understand intended sequence.",
+    "whyAlternativesRejected": "Document handover alone is rejected. Informal explanation without drill is rejected.",
+    "calculationInputs": "Operator role; shift coverage; procedure complexity; alarm priority; emergency modes; documentation language.",
+    "riskIfMisapplied": "Untrained operators may trigger wrong transfer, ignore alarms, or fail to restore redundancy.",
+    "controlMeasures": "Use classroom training, field walkdown, scenario drill, and competency record.",
+    "acceptanceEvidence": "Training slides, attendance record, drill record, Q&A log, and operator sign-off.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-40 Commissioning and Acceptance evidence package"
+  },
+  {
+    "id": "DC-V7-0067",
+    "system": "Operation, Maintenance and Risk Control",
+    "systemCode": "DC-60",
+    "item": "Maintenance Access and Clearance",
+    "functionalRequirement": "Allow safe replacement, inspection, and testing without removing unrelated systems.",
+    "recommendedSolution": "Check access envelopes for switchgear, UPS, generators, chillers, pumps, valves, filters, sensors, and cable routes.",
+    "engineeringDecisionLogic": "Access is a design requirement because maintainability is part of reliability. Equipment that cannot be serviced safely becomes a future outage risk.",
+    "whyAlternativesRejected": "Layout based only on installation clearance is rejected. Maintenance clearance must include door swing, lifting, spare removal, and safety zones.",
+    "calculationInputs": "Service envelope; lifting path; spare removal; working clearance; lockout area; floor loading; route obstruction.",
+    "riskIfMisapplied": "Poor access increases downtime, safety risk, and maintenance avoidance.",
+    "controlMeasures": "Use maintainability review, layout check, mock service route, and O&M walkdown.",
+    "acceptanceEvidence": "Access checklist, layout review, service route photos, and O&M acceptance record.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-60 Operation, Maintenance and Risk Control evidence package"
+  },
+  {
+    "id": "DC-V7-0068",
+    "system": "Operation, Maintenance and Risk Control",
+    "systemCode": "DC-60",
+    "item": "Spare Parts Strategy",
+    "functionalRequirement": "Reduce recovery time for critical failure modes.",
+    "recommendedSolution": "Define critical spares by lead time, failure consequence, service capability, and manufacturer support.",
+    "engineeringDecisionLogic": "Spares are selected by risk, not vendor convenience. High-consequence, long-lead components require local or contractually assured availability.",
+    "whyAlternativesRejected": "Stocking every part is wasteful. Relying only on vendor lead time is rejected for critical components.",
+    "calculationInputs": "Failure consequence; lead time; warranty; shelf life; compatibility; storage condition; supplier location.",
+    "riskIfMisapplied": "No spare strategy extends outage and weakens maintenance readiness.",
+    "controlMeasures": "Use critical spares list, storage inspection, periodic compatibility review, and supplier agreement.",
+    "acceptanceEvidence": "Spare list, inventory record, supplier SLA, storage inspection, and replacement log.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-60 Operation, Maintenance and Risk Control evidence package"
+  },
+  {
+    "id": "DC-V7-0069",
+    "system": "Operation, Maintenance and Risk Control",
+    "systemCode": "DC-60",
+    "item": "SOP, MOP and EOP Framework",
+    "functionalRequirement": "Control normal operation, planned maintenance, and emergency response in a repeatable way.",
+    "recommendedSolution": "Use SOP for routine operation, MOP for planned work, and EOP for abnormal or emergency response.",
+    "engineeringDecisionLogic": "The framework is selected because data centers depend on controlled human action. Procedures must be scenario-based, reviewed, and tested.",
+    "whyAlternativesRejected": "Verbal knowledge is rejected. Generic procedures are rejected if they do not match actual sequence.",
+    "calculationInputs": "Operating modes; maintenance tasks; emergency scenarios; approval levels; rollback steps; communication plan.",
+    "riskIfMisapplied": "Poor procedure creates human error, unsafe switching, and loss of redundancy.",
+    "controlMeasures": "Use procedure templates, approval workflow, pre-task briefing, post-task review, and drills.",
+    "acceptanceEvidence": "SOP/MOP/EOP set, approval log, drill records, and post-maintenance review.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-60 Operation, Maintenance and Risk Control evidence package"
+  },
+  {
+    "id": "DC-V7-0070",
+    "system": "Operation, Maintenance and Risk Control",
+    "systemCode": "DC-60",
+    "item": "Change Control for Critical Systems",
+    "functionalRequirement": "Prevent undocumented modifications from creating hidden failure paths.",
+    "recommendedSolution": "Apply change review to control logic, breaker settings, network configuration, alarm thresholds, and equipment replacement.",
+    "engineeringDecisionLogic": "Change control is selected because reliability can be degraded by small undocumented changes.",
+    "whyAlternativesRejected": "Uncontrolled field changes are rejected. Excessive bureaucracy is rejected where emergency repair needs controlled fast approval.",
+    "calculationInputs": "Change type; risk level; affected systems; rollback plan; test requirement; approval authority; documentation update.",
+    "riskIfMisapplied": "Untracked changes cause future incident confusion and unsafe operation.",
+    "controlMeasures": "Use change request, impact review, test plan, rollback plan, and record update.",
+    "acceptanceEvidence": "Change log, approval record, test evidence, rollback confirmation, and updated drawings.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-60 Operation, Maintenance and Risk Control evidence package"
+  },
+  {
+    "id": "DC-V7-0071",
+    "system": "Operation, Maintenance and Risk Control",
+    "systemCode": "DC-60",
+    "item": "Energy Performance KPI",
+    "functionalRequirement": "Track energy performance without sacrificing resilience or safety.",
+    "recommendedSolution": "Use PUE, cooling plant efficiency, pump/fan power, UPS efficiency, and water-use indicators with context.",
+    "engineeringDecisionLogic": "KPI is selected to guide improvement, not force unsafe energy saving. Reliability limits and temperature envelopes remain primary.",
+    "whyAlternativesRejected": "Single PUE target is incomplete. Energy-saving mode is rejected if it hides redundancy or alarm risk.",
+    "calculationInputs": "IT load; cooling energy; UPS losses; weather; water use; redundancy state; operating hours.",
+    "riskIfMisapplied": "Poor KPI use may reduce safety margin or misrepresent performance.",
+    "controlMeasures": "Use KPI dashboard, normalization by weather/load, and exception review.",
+    "acceptanceEvidence": "Energy dashboard, meter validation, trend report, and operating review.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-60 Operation, Maintenance and Risk Control evidence package"
+  },
+  {
+    "id": "DC-V7-0072",
+    "system": "Operation, Maintenance and Risk Control",
+    "systemCode": "DC-60",
+    "item": "Capacity Management and Expansion Gate",
+    "functionalRequirement": "Control growth without exceeding power, cooling, space, or operational limits.",
+    "recommendedSolution": "Use phase gates that check rack load, UPS capacity, cooling capacity, floor loading, network, fire load, and maintenance path before expansion.",
+    "engineeringDecisionLogic": "Expansion gate is selected because data centers often fail by incremental overload rather than initial design error.",
+    "whyAlternativesRejected": "Adding racks by available space only is rejected. Adding equipment without updating power/cooling model is rejected.",
+    "calculationInputs": "Existing load; forecast; spare breakers; cooling margin; airflow; floor load; network ports; fire safety; O&M capacity.",
+    "riskIfMisapplied": "Uncontrolled expansion causes hot spots, overloaded circuits, and hidden loss of redundancy.",
+    "controlMeasures": "Use capacity dashboard, approval gate, updated calculations, and post-install verification.",
+    "acceptanceEvidence": "Capacity report, approval record, updated model, installation checklist, and post-change test.",
+    "accessLevel": "Public Technical Summary",
+    "restrictedPackage": "DC-60 Operation, Maintenance and Risk Control evidence package"
+  }
+];
 
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <h2>Master Database Interface</h2>
-      <span><b id="filteredCount">—</b> records shown</span>
-    </div>
-    <div class="filters">
-      <input id="search" type="search" placeholder="Search equipment, PLC, risk, formula, evidence...">
-      <select id="filterGroup"></select>
-      <select id="filterTopic"></select>
-      <select id="filterAccess"></select>
-    </div>
-    <div class="table-wrap">
-      <table aria-label="Data center master decision table">
-        <thead>
-          <tr>
-            <th>ID / Access</th>
-            <th>System</th>
-            <th>Item</th>
-            <th>Recommended route / spec</th>
-            <th>Why selected</th>
-            <th>Main risk</th>
-            <th>Acceptance evidence</th>
-            <th>Web ID</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
-          <tr><td colspan="8">Loading database...</td></tr>
-        </tbody>
-      </table>
-    </div>
+    const systemFilter = document.getElementById('systemFilter');
+    const packageFilter = document.getElementById('packageFilter');
+    const accessFilter = document.getElementById('accessFilter');
+    const searchInput = document.getElementById('searchInput');
+    const recordBody = document.getElementById('recordBody');
+    const groupGrid = document.getElementById('groupGrid');
+    const shownCount = document.getElementById('shownCount');
 
-    <div class="detail" id="detail">
-      <h2 id="detailTitle"></h2>
-      <p id="detailMeta"></p>
-      <div class="detail-grid" id="detailGrid"></div>
-    </div>
-  </div>
-</section>
-</main>
+    function unique(arr) { return [...new Set(arr)].filter(Boolean).sort(); }
+    function shortText(s, n=170) { return (s || '').length > n ? (s || '').slice(0,n).trim() + '…' : (s || ''); }
+    function textOf(r) { return Object.values(r).join(' ').toLowerCase(); }
 
-<footer class="footer">
-  <div class="container">
-    <p>
-      Nehemiah Reconstruction Supply Chain Initiative · Data Center Professionalism.
-      Detailed PPT materials, project tables, checklists, PLC logic, I/O tables, photos and records
-      are available only after review.
-    </p>
-  </div>
-</footer>
-<script>
-const DATA_URL = "../data/featured-data-center-master.json?v=english-inline-v6";
-const fields = {
-  id:"ID", group:"System Group", subsystem:"Subsystem", level:"Object Level",
-  item:"Item / Equipment / Accessory / Document", requirement:"Functional Requirement", route:"Recommended Technical Route / Specification",
-  params:"Key Technical Parameters / Control Indicators", why:"Why This Route / Specification Is Selected",
-  whyNot:"Why Alternatives Are Not Selected", calc:"Calculation Required", inputs:"Calculation Inputs",
-  formula:"Calculation / Verification Formula", demand:"Example Demand Value", capacity:"Example Selected Capacity",
-  margin:"Margin %", risk:"Main Risk", measure:"Control Measures", evidence:"Acceptance / Evidence Documents",
-  delivery:"Operation / Handover Documents", access:"Access Level", package:"Restricted Package", webid:"Website Interface ID",
-  summary:"Public Web Summary", topic:"Fourth-Level Category"
-};
-let allRecords = [];
-let filtered = [];
-function tagClass(access){
-  if(!access) return "tag";
-  if(access.includes("Restricted")) return "tag res";
-  if(access.includes("Request")) return "tag req";
-  return "tag";
-}
-function byId(id){return document.getElementById(id)}
-function uniq(arr){return [...new Set(arr.filter(Boolean))].sort((a,b)=>a.localeCompare(b,"en-US"))}
-function fillSelect(id, values, allText){
-  const el = byId(id);
-  el.innerHTML = `<option value="">${allText}</option>` + values.map(v=>`<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join("");
-}
-function escapeHtml(s){
-  return String(s ?? "").replace(/[&<>"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
-}
-function truncate(s,n=110){
-  s = String(s ?? "");
-  return s.length>n ? s.slice(0,n)+"…" : s;
-}
-function init(){
-  fetch(DATA_URL).then(r=>r.json()).then(data=>{
-    allRecords = data.records || [];
-    filtered = allRecords;
-    byId("countRecords").textContent = allRecords.length;
-    byId("countSystems").textContent = uniq(allRecords.map(r=>r[fields.group])).length;
-    byId("countPackages").textContent = uniq(allRecords.map(r=>r[fields.package])).length;
-    byId("countCalc").textContent = allRecords.filter(r=>String(r[fields.calc]).includes("Yes")).length;
-    fillSelect("filterGroup", uniq(allRecords.map(r=>r[fields.group])), "All system groups");
-    fillSelect("filterAccess", uniq(allRecords.map(r=>r[fields.access])), "All access levels");
-    fillSelect("filterTopic", uniq(allRecords.map(r=>r[fields.topic])), "All fourth-level categories");
-    renderCards();
-    applyFilters();
-    ["search","filterGroup","filterAccess","filterTopic"].forEach(id=>{
-      byId(id).addEventListener("input", applyFilters);
-      byId(id).addEventListener("change", applyFilters);
-    });
-  }).catch(err=>{
-    byId("tableBody").innerHTML = `<tr><td colspan="8">Database loading failed: ${escapeHtml(err.message)}</td></tr>`;
-  });
-}
-function renderCards(){
-  const groups = uniq(allRecords.map(r=>r[fields.group])).slice(0,12);
-  byId("systemCards").innerHTML = groups.map(g=>{
-    const rows = allRecords.filter(r=>r[fields.group]===g);
-    const pkgs = uniq(rows.map(r=>r[fields.package])).slice(0,3).join(" / ");
-    return `<article class="card">
-      <h3>${escapeHtml(g)}</h3>
-      <p>${rows.length} records; package: ${escapeHtml(pkgs || "Not set")}</p>
-    </article>`;
-  }).join("");
-}
-function applyFilters(){
-  const q = byId("search").value.trim().toLowerCase();
-  const g = byId("filterGroup").value;
-  const a = byId("filterAccess").value;
-  const t = byId("filterTopic").value;
-  filtered = allRecords.filter(r=>{
-    const text = Object.values(r).join(" ").toLowerCase();
-    return (!q || text.includes(q)) && (!g || r[fields.group]===g) && (!a || r[fields.access]===a) && (!t || r[fields.topic]===t);
-  });
-  byId("filteredCount").textContent = filtered.length;
-  renderTable(filtered.slice(0,120));
-  byId("detail").classList.remove("show");
-}
-function renderTable(rows){
-  byId("tableBody").innerHTML = rows.map((r,idx)=>`
-    <tr onclick="showDetail('${escapeHtml(r[fields.id])}')">
-      <td><b>${escapeHtml(r[fields.id])}</b><br><span class="${tagClass(r[fields.access])}">${escapeHtml(r[fields.access])}</span></td>
-      <td>${escapeHtml(r[fields.group])}<br><small>${escapeHtml(r[fields.subsystem])}</small></td>
-      <td>${escapeHtml(r[fields.item])}</td>
-      <td>${escapeHtml(truncate(r[fields.route],90))}</td>
-      <td>${escapeHtml(truncate(r[fields.why],120))}</td>
-      <td>${escapeHtml(truncate(r[fields.risk],95))}</td>
-      <td>${escapeHtml(truncate(r[fields.evidence],95))}</td>
-      <td>${escapeHtml(r[fields.webid])}</td>
-    </tr>
-  `).join("") || `<tr><td colspan="8">No matching records.</td></tr>`;
-}
-function showDetail(id){
-  const r = allRecords.find(x=>x[fields.id]===id);
-  if(!r) return;
-  const detailFields = [
-    ["Item / Equipment / Document",fields.item],["Functional Requirement",fields.requirement],["Recommended Technical Route / Specification",fields.route],
-    ["Key Technical Parameters / Control Indicators",fields.params],["Why selected",fields.why],["Why alternatives are not selected",fields.whyNot],
-    ["Calculation required",fields.calc],["Calculation inputs",fields.inputs],["Calculation / verification formula",fields.formula],
-    ["Example demand value",fields.demand],["Example selected capacity",fields.capacity],["Margin %",fields.margin],
-    ["Main risk",fields.risk],["Control measures",fields.measure],["Acceptance / evidence documents",fields.evidence],
-    ["Operation / handover documents",fields.delivery],["Restricted package",fields.package],["Public web summary",fields.summary]
-  ];
-  byId("detailTitle").textContent = `${r[fields.id]} · ${r[fields.item]}`;
-  byId("detailMeta").innerHTML = `<span class="${tagClass(r[fields.access])}">${escapeHtml(r[fields.access])}</span> <span class="tag">${escapeHtml(r[fields.group])}</span> <span class="tag">${escapeHtml(r[fields.topic])}</span>`;
-  byId("detailGrid").innerHTML = detailFields.map(([label,key])=>`
-    <div class="detail-item"><b>${escapeHtml(label)}</b><span>${escapeHtml(r[key] || "—")}</span></div>
-  `).join("");
-  byId("detail").classList.add("show");
-  byId("detail").scrollIntoView({behavior:"smooth",block:"start"});
-}
-document.addEventListener("DOMContentLoaded", init);
+    function initFilters() {
+      unique(records.map(r => r.system)).forEach(s => {
+        const o = document.createElement('option'); o.value = s; o.textContent = s; systemFilter.appendChild(o);
+      });
+      unique(records.map(r => r.restrictedPackage)).forEach(p => {
+        const o = document.createElement('option'); o.value = p; o.textContent = p; packageFilter.appendChild(o);
+      });
+    }
 
-</script>
+    function renderGroups() {
+      const systems = unique(records.map(r => r.system));
+      groupGrid.innerHTML = systems.map(s => {
+        const rows = records.filter(r => r.system === s);
+        const examples = rows.slice(0,3).map(r => r.item).join(' / ');
+        return `<div class="group-card" data-system="${s.replace(/"/g,'&quot;')}">
+          <h3>${s}</h3>
+          <p>${shortText(examples, 118)}</p>
+          <span class="count">${rows.length} public records</span>
+        </div>`;
+      }).join('');
+      groupGrid.querySelectorAll('.group-card').forEach(card => {
+        card.addEventListener('click', () => {
+          systemFilter.value = card.dataset.system;
+          renderTable();
+          document.getElementById('database').scrollIntoView({behavior:'smooth'});
+        });
+      });
+    }
+
+    function filteredRecords() {
+      const q = searchInput.value.trim().toLowerCase();
+      return records.filter(r => {
+        if (systemFilter.value && r.system !== systemFilter.value) return false;
+        if (packageFilter.value && r.restrictedPackage !== packageFilter.value) return false;
+        if (accessFilter.value && r.accessLevel !== accessFilter.value) return false;
+        if (q && !textOf(r).includes(q)) return false;
+        return true;
+      });
+    }
+
+    function escapeHtml(s) {
+      return String(s || '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    }
+
+    function renderTable() {
+      const rows = filteredRecords();
+      shownCount.textContent = `${rows.length} records shown`;
+      recordBody.innerHTML = rows.map((r) => `
+        <tr class="record-row" onclick="openDetail(${records.indexOf(r)})">
+          <td><strong>${escapeHtml(r.id)}</strong><br><span class="badge">${escapeHtml(r.accessLevel)}</span></td>
+          <td><strong>${escapeHtml(r.system)}</strong><span class="small">${escapeHtml(r.systemCode)}</span></td>
+          <td>${escapeHtml(r.item)}</td>
+          <td><div class="truncate">${escapeHtml(r.functionalRequirement)}</div></td>
+          <td><div class="truncate">${escapeHtml(r.recommendedSolution)}</div></td>
+          <td><div class="truncate">${escapeHtml(r.engineeringDecisionLogic)}</div></td>
+          <td><div class="truncate">${escapeHtml(r.riskIfMisapplied)}</div></td>
+          <td><div class="truncate">${escapeHtml(r.acceptanceEvidence)}</div></td>
+        </tr>
+      `).join('');
+    }
+
+    function openDetail(index) {
+      const r = records[index];
+      document.getElementById('detailId').textContent = r.id + ' · ' + r.accessLevel;
+      document.getElementById('detailTitle').textContent = r.item;
+      document.getElementById('detailSystem').textContent = r.system + ' · ' + r.systemCode;
+      document.getElementById('dFunc').textContent = r.functionalRequirement;
+      document.getElementById('dSolution').textContent = r.recommendedSolution;
+      document.getElementById('dLogic').textContent = r.engineeringDecisionLogic;
+      document.getElementById('dAlt').textContent = r.whyAlternativesRejected;
+      document.getElementById('dCalc').textContent = r.calculationInputs;
+      document.getElementById('dRisk').textContent = r.riskIfMisapplied;
+      document.getElementById('dControl').textContent = r.controlMeasures;
+      document.getElementById('dEvidence').textContent = r.acceptanceEvidence;
+      document.getElementById('dPackage').textContent = r.restrictedPackage;
+      document.getElementById('detail').classList.add('open');
+    }
+    function closeDetail() { document.getElementById('detail').classList.remove('open'); }
+    document.getElementById('detail').addEventListener('click', (e) => { if(e.target.id === 'detail') closeDetail(); });
+    [systemFilter, packageFilter, accessFilter, searchInput].forEach(el => el.addEventListener('input', renderTable));
+
+    initFilters();
+    renderGroups();
+    renderTable();
+  </script>
 </body>
 </html>

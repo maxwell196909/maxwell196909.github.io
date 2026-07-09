@@ -291,7 +291,177 @@
       .values-card { padding: 24px; }
       .trust { letter-spacing: 0.06em; }
     }
-  </style>
+ .values-section {
+  position: relative;
+  padding: 110px 24px 90px;
+  background:
+    radial-gradient(circle at top right, rgba(201, 162, 74, 0.16), transparent 34%),
+    linear-gradient(180deg, #fffdf8 0%, #f7f4ef 100%);
+  overflow: hidden;
+}
+
+.values-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.values-bg-cross {
+  position: absolute;
+  right: 8%;
+  top: 80px;
+  width: 260px;
+  height: 360px;
+  opacity: 0.045;
+  background:
+    linear-gradient(#0b1f3a, #0b1f3a) center / 70px 100% no-repeat,
+    linear-gradient(#0b1f3a, #0b1f3a) center / 100% 70px no-repeat;
+  pointer-events: none;
+}
+
+.section-kicker {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #c9a24a;
+  font-weight: 700;
+}
+
+.values-header {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.values-title {
+  margin: 0 0 18px;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  color: #0b1f3a;
+}
+
+.values-lead {
+  font-size: 24px;
+  line-height: 1.45;
+  color: #0f8f83;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.values-text p {
+  font-size: 18px;
+  line-height: 1.75;
+  color: #40536d;
+  max-width: 680px;
+}
+
+.values-hero-image {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 28px 70px rgba(11, 31, 58, 0.18);
+  border: 1px solid rgba(201, 162, 74, 0.28);
+}
+
+.values-hero-image img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  display: block;
+}
+
+.values-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.value-card {
+  background: rgba(255, 253, 248, 0.94);
+  border: 1px solid rgba(201, 162, 74, 0.24);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 46px rgba(11, 31, 58, 0.08);
+}
+
+.value-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+
+.value-card-body {
+  padding: 24px 24px 28px;
+}
+
+.value-card h3 {
+  margin: 0 0 14px;
+  font-size: 22px;
+  color: #0b1f3a;
+}
+
+.value-card p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #506177;
+}
+
+.values-note {
+  margin-top: 42px;
+  padding: 24px 28px;
+  border-left: 4px solid #c9a24a;
+  background: rgba(255, 253, 248, 0.86);
+  border-radius: 0 18px 18px 0;
+  color: #40536d;
+  font-size: 16px;
+  line-height: 1.7;
+  box-shadow: 0 12px 34px rgba(11, 31, 58, 0.06);
+}
+
+@media (max-width: 980px) {
+  .values-header {
+    grid-template-columns: 1fr;
+  }
+
+  .values-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .values-hero-image img {
+    height: 360px;
+  }
+}
+
+@media (max-width: 640px) {
+  .values-section {
+    padding: 82px 18px 70px;
+  }
+
+  .values-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .values-hero-image img {
+    height: 280px;
+  }
+
+  .values-title {
+    font-size: 46px;
+  }
+
+  .values-lead {
+    font-size: 20px;
+  }
+} </style>
 </head>
 <body>
   <header class="topbar">
@@ -340,57 +510,87 @@
       </div>
     </section>
 
-    <section id="values" class="section">
-  <div class="container">
-    <div class="section-head">
-      <h2 class="section-title">Our Values</h2>
-      <p class="section-lead">
-        Faithful service before God, practical work before people.
-      </p>
+    <section id="values" class="values-section">
+  <div class="values-bg-cross"></div>
+
+  <div class="values-container">
+    <div class="values-header">
+      <div class="values-text">
+        <div class="section-kicker">Faith · Stewardship · Service</div>
+
+        <h2 class="values-title">Our Values</h2>
+
+        <p class="values-lead">
+          Faithful service before God, practical work before people.
+        </p>
+
+        <p>
+          As children of God, we are willing to offer our strength in this broken world.
+          We seek to serve with humility, to please our God, and to do what is pleasing to Him.
+        </p>
+
+        <p>
+          We hold fast to the foundation of reverence, honesty, covenant faithfulness,
+          self-restraint, and service.
+        </p>
+      </div>
+
+      <div class="values-hero-image">
+        <img src="assets/IMG_1469.jpeg" alt="Church fellowship and service community">
+      </div>
     </div>
 
-    <p class="section-lead">
-      As children of God, we are willing to offer our strength in this broken world.
-      We seek to serve with humility, to please our God, and to do what is pleasing to Him.
-    </p>
-
-    <p>
-      We hold fast to the foundation of reverence, honesty, covenant faithfulness, self-restraint, and service.
-    </p>
-
-    <div class="grid">
-      <article class="card">
-        <h3>Who We Are</h3>
-        <p>
-          We are prayerfully building a faith-based reconstruction initiative for practical service, stewardship, and community support.
-        </p>
+    <div class="values-cards">
+      <article class="value-card">
+        <img src="assets/IMG_1469.jpeg" alt="Faith-based reconstruction community">
+        <div class="value-card-body">
+          <h3>Who We Are</h3>
+          <p>
+            We are prayerfully building a faith-based reconstruction initiative
+            for practical service, stewardship, and community support.
+          </p>
+        </div>
       </article>
 
-      <article class="card">
-        <h3>Faith Foundation</h3>
-        <p>
-          Our work begins with reverence before God, humility in service, honesty in records, and faithfulness in what has been entrusted to us.
-        </p>
+      <article class="value-card">
+        <img src="assets/IMG_1466.jpeg" alt="Faith foundation">
+        <div class="value-card-body">
+          <h3>Faith Foundation</h3>
+          <p>
+            Our work begins with reverence before God, humility in service,
+            honesty in records, and faithfulness in what has been entrusted to us.
+          </p>
+        </div>
       </article>
 
-      <article class="card">
-        <h3>Church Guidance</h3>
-        <p>
-          We seek to work under church guidance, spiritual accountability, and disciplined stewardship.
-        </p>
+      <article class="value-card">
+        <img src="assets/IMG_1467.jpeg" alt="Church guidance and fellowship">
+        <div class="value-card-body">
+          <h3>Church Guidance</h3>
+          <p>
+            We seek to work under church guidance, spiritual accountability,
+            and disciplined stewardship.
+          </p>
+        </div>
       </article>
 
-      <article class="card">
-        <h3>Nonprofit Principle</h3>
-        <p>
-          We seek to operate by nonprofit-oriented principles. This work is not built for private gain, but for faithful service and public-benefit reconstruction.
-        </p>
+      <article class="value-card">
+        <img src="assets/IMG_1470.jpeg" alt="Service and public benefit">
+        <div class="value-card-body">
+          <h3>Nonprofit Principle</h3>
+          <p>
+            We seek to operate by nonprofit-oriented principles. This work is not built
+            for private gain, but for faithful service and public-benefit reconstruction.
+          </p>
+        </div>
       </article>
     </div>
 
-    <p class="note">
-      This initiative is being built step by step. We do not claim formal nonprofit or tax-exempt status unless and until the proper legal structure and recognition are established.
-    </p>
+    <div class="values-note">
+      This initiative is being built step by step with prayer, discipline, and proper legal order.
+      We do not claim formal nonprofit or tax-exempt status unless and until the proper legal
+      structure and recognition are established.
+    </div>
   </div>
 </section>
 <section id="engineering-practice" class="section">
